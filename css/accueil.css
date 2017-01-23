@@ -1,0 +1,43 @@
+
+/**
+Crée le 19 déc. 2016
+Auteur : Romain Jacquiez
+Nom du css : accueil
+Rôle : css de l'accueil
+*/
+
+.logo{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+.img_loader{
+    width: 8%;
+}
+
+button:hover{
+    color: #212121;
+}
+
+#formC,#formI{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+fieldset{
+    border-radius: 10px;
+    background-color: #E7E6E6;
+    color: #212121;
+    font-family: 'Trebuchet MS';
+}
+
+.titre_form{
+    text-align: center;
+    font-size: 130%;
+}
+
+#erreur,#erreur2{
+    color: #FF3333;
+    font-weight: bolder;
+}
