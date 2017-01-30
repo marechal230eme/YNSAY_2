@@ -5,6 +5,8 @@
   Nom de la page : accueil.php
   Rôle : Page d'accueil du site
  */
+<<<<<<< HEAD
+=======
 ?>
 
 <html>
@@ -48,3 +50,4 @@
         <script src="../js/materialize.js" type="text/javascript"></script>
     </body>
 </html>
+>>>>>>> refs/remotes/origin/master
