@@ -47,4 +47,8 @@
         </fieldset>
         <script src="../js/materialize.js" type="text/javascript"></script>
     </body>
+    
+    <?php
+        include"../includes/i_footer.php";
+    ?>
 </html>

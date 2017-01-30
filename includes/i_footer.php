@@ -1,19 +1,24 @@
 <?php
-
 /**
-Crée le 23/01/17
-Auteur : Antoine Berenger
-Nom de l'include : i_footer
-Rôle : include du footer général
-*/
+  Crée le 23/01/17
+  Auteur : Romain Jacquiez
+  Nom de l'include : i_footer
+  Rôle : include du footer général
+ */
 ?>
+<link href="../css/i_footer.css" rel="stylesheet" type="text/css"/>
 
 <footer>
-	<ul>
-		<li><a href="javascript:void(0);">Mention légales</a></li>
-		<li><a href="javascript:void(0);">A propos</a></li>
-                <li><a href="../pages/faq.php">FAQ</a></li>
-		<li><a href="javascript:void(0);">Contact email</a></li>
-	</ul>
-	<p>Copyright &copy; <?php echo date("Y"); ?> Ynsay</p>
+    <div class="dessus_footer">
+        <a class="dessus_footer_contenu" href="javascript:void(0);">Mention légales</a>
+        <a class="dessus_footer_contenu" href="javascript:void(0);">À propos</a>
+        <a class="dessus_footer_contenu" href="../pages/faq.php">Foire aux questions</a>
+        <a class="dessus_footer_contenu" href="../pages/accueil.php">Contact email</a>
+    </div>
+    <div class="dessous_footer">
+        <div class="dessous_footer_contenu">
+            <span class="dessous_footer_contenu">©<?php echo date("Y") ?> Copyright</span>
+            <span class="dessous_footer_contenu">Site crée par des Iseniens</span>
+        </div>
+    </div>
 </footer>
