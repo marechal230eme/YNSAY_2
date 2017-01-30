@@ -7,6 +7,51 @@ Rôle : css Faq
 */
 
 .logo{
-    
-    width: 10%;
+    width: 15%;
+    margin-left: 42%;
+    margin-top: 10px;
+}
+
+.titre{
+    font-size: 40px;
+    text-align: center;
+}
+
+.faq{
+    margin-top: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+fieldset{
+    border-radius: 10px;
+    background-color: #E7E6E6;
+    color: #212121;
+    font-family: 'Trebuchet MS';
+}
+
+.ensemble{
+    margin: 42px;
+}
+
+#contenu_couleur{
+    font-size: 20px;
+    color: #FF6600;
+}
+
+#question{
+    font-size: 20px;
+    color: #212121 !important;
+}
+
+.div_contenu{
+    background-color: #DEDCDC;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.p_contenu{
+    margin-left: 20px;    
 }
