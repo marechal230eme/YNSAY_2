@@ -5,8 +5,6 @@
   Nom de la page : accueil.php
   Rôle : Page d'accueil du site
  */
-<<<<<<< HEAD
-=======
 ?>
 
 <html>
@@ -49,5 +47,8 @@
         </fieldset>
         <script src="../js/materialize.js" type="text/javascript"></script>
     </body>
+    
+    <?php
+        include"../includes/i_footer.php";
+    ?>
 </html>
->>>>>>> refs/remotes/origin/master
