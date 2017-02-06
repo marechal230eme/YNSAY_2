@@ -5,11 +5,18 @@ Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
 
+/*
 .logo{
     
-    width: 10%;
+    width: 9%;
 }
 
 .avatar{
     width: 5%;
 }
+
+#fond_de_pages 
+{ 
+    background-color: #0C0C0C !important;    
+}
+*/

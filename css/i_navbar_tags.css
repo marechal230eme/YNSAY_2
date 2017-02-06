@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 janv. 2017, 22:31:52
+    Author     : pparrat
+    but : css de la bar de nav des tags 
+*/
+
+/************** Partie de la navbar  ******************/
+
+
+
+body {margin: 2px;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #444;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color:  #FF6600;}
+
+ul.topnav li.right {
+    float: right;
+    
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+/* gestion du LOGO : */ 
+
+.logo{
+    
+    width: 3%;
+    float: left ;
+}
