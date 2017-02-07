@@ -18,7 +18,7 @@
     <div class="dessous_footer">
         <div class="dessous_footer_contenu">
             <span class="dessous_footer_contenu">©<?php echo date("Y") ?> Copyright</span>
-            <span class="dessous_footer_contenu">Site crée par des Iseniens</span>
+            <span class="dessous_footer_contenu">Site créé par des Iseniens</span>
         </div>
     </div>
 </footer>
