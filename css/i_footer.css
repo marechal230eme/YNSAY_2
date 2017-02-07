@@ -8,6 +8,9 @@ Rôle : css du footer
 footer{
     margin-top: 20px;
     font-family: 'Trebuchet MS';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .dessus_footer{
