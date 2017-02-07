@@ -10,7 +10,7 @@
 
 <html>
     <head>
-        <title>ecriture de vos article  </title>
+        <title>Ecriture de vos article  </title>
         <?php include '../includes/i_meta.php';  ?>
         <meta name="description" content="Page d'écriture des articles" />
         <link href="../css/ecriture.css" rel="stylesheet" type="text/css"/>
@@ -19,7 +19,7 @@
 
     <body class="#212121 grey darken-4">
 		<header>
-			<!-- metre en place le logo a droite puis metre en place le nuage de tag dans le header  -->
+			<!-- mettre en place le logo a droite puis metre en place le nuage de tag dans le header  -->
 			<img class="logo" src="../images/logo.png" alt="Logo du site"/>
 		</header>
         
