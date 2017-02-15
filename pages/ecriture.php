@@ -36,6 +36,7 @@
                 <label for="one">
                 </label>
             </form>
+            <!--
             <select multiple>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Option 1</option>
@@ -43,13 +44,13 @@
                 <option value="3">Option 3</option>
             </select>
             <label>Materialize Multiple Select</label>
-        </fieldset>
+        </fieldset> -->
+             <?php include '../includes/i_selection_tags.php'; ?>
 
 
 
 
-
-        <?php include '../includes/i_footer.php'; ?>
+       
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
     <script>
@@ -57,4 +58,5 @@
             $('select').material_select();
         });
     </script>
+     <?php include '../includes/i_footer.php'; ?>
 </html>

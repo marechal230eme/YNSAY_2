@@ -67,7 +67,7 @@ class o_requete
     }
     
 
-
+    
     public function Tag(&$id_tag, &$nom_tag, &$description_tag)
     {
         $requete = "SELECT id_tag, nom_tag, description_tag FROM tag";
