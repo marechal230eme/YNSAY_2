@@ -48,7 +48,7 @@
 
 
 
-        <?php include '../includes/i_footer.php'; ?>
+       
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
     <script>
@@ -56,4 +56,5 @@
             $('select').material_select();
         });
     </script>
+     <?php include '../includes/i_footer.php'; ?>
 </html>

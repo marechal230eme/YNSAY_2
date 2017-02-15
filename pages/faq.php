@@ -35,7 +35,8 @@ But de la page : répondre aux questions fréquentes
                 </div>
        </fieldset>
        
-        <?php include '../includes/i_footer.php';?>
+       
        
     </body>
+     <?php include '../includes/i_footer.php';?>
 </html>
