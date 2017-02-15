@@ -35,8 +35,14 @@ But de la page : répondre aux questions fréquentes
                 </div>
        </fieldset>
        
+<<<<<<< HEAD
        
        
     </body>
      <?php include '../includes/i_footer.php';?>
+=======
+       
+    </body>
+    <?php include '../includes/i_footer.php';?>
+>>>>>>> refs/remotes/origin/master
 </html>
