@@ -10,7 +10,7 @@
     <head>
 
         <title>Ecriture de vos article  </title>
-        <?php include '../includes/i_meta.php';  ?>
+        <?php include '../includes/i_meta.php'; ?>
         <meta name="description" content="Page d'écriture des articles" />
         <link href="../css/ecriture.css" rel="stylesheet" type="text/css"/>
         <!--  <link href="../css/i_navbar_tags.css" rel="stylesheet" type="text/css"/>  -->
@@ -35,22 +35,15 @@
                 <a href="lecture.php"></a>
                 <label for="one">
                 </label>
+                <?php include '../includes/i_selection_tags.php'; ?>
             </form>
-            <!--
-            <select multiple>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Materialize Multiple Select</label>
-        </fieldset> -->
-             <?php include '../includes/i_selection_tags.php'; ?>
+        </fieldset> 
 
 
 
 
-       
+
+
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
     <script>
@@ -58,5 +51,5 @@
             $('select').material_select();
         });
     </script>
-     <?php include '../includes/i_footer.php'; ?>
+    <?php include '../includes/i_footer.php'; ?>
 </html>
