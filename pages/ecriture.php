@@ -18,7 +18,7 @@
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
 
     </head>
-
+    
     <body class="#212121 grey darken-4">
 
         <header>
@@ -27,14 +27,17 @@
             <?php include '../includes/i_navbar_tags.php'; ?>
         </header>
 
-        <fieldset>
-            <legend>Ecrivez votre article</legend>
+        <fieldset class="ecriture">
+            <p class="titre">Exprimez-vous</p>
             <form method="post" action="./verifArticle.php">
-                <p>titre de votre article  <input  type="text"  name="titre"></p>
-                <p>Corps de votre article : <textarea  name="corps">Votre article...</textarea></p>
+                <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
+                    <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="focus" maxlength="100" required="Il vous un titre pour être remarqué !">
+                </p>
+                <p class="div_contenu">Corps de votre article <span id="contenu_couleur"> : </span> 
+                    <textarea id="corps" name="corps" rows="20" cols="5" placeholder="Votre article ..." maxlength="500"></textarea>
+                </p>
                 <a href="lecture.php"></a>
-                <label for="one">
-                </label>
+                <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'; ?>
             </form>
         </fieldset> 

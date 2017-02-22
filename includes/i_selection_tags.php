@@ -64,7 +64,7 @@ var_dump($case_description);
 $i = 0;
 foreach ($description as $case) {
     ?>
-    <div class="input-field col s12">
+    <div class="input-field #212121 grey darken-4 orange-text col s12">
         <select multiple>
             <?php
             echo"<option value=\"\" disabled selected> $case </option>";
@@ -80,8 +80,7 @@ foreach ($description as $case) {
             }
             $i=0; 
             ?>
-        </select>
-        <label>selections des tags </label>
+        </select>     
     </div>
     <?php
 }
