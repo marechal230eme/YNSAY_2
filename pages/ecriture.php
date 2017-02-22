@@ -18,7 +18,7 @@
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
 
     </head>
-
+    
     <body class="#212121 grey darken-4">
 
         <header>
@@ -27,11 +27,11 @@
             <?php include '../includes/i_navbar_tags.php'; ?>
         </header>
 
-        <fieldset>
-            <legend>Ecrivez votre article</legend>
+        <fieldset class="ecriture">
+            <p class="titre">Ecrivez votre article</p>
             <form method="post" action="./verifArticle.php">
-                <p>titre de votre article  <input  type="text"  name="titre"></p>
-                <p>Corps de votre article : <textarea  name="corps">Votre article...</textarea></p>
+                <p class="div_contenu">Titre de votre article  <input  type="text"  name="titre"></p>
+                <p class="div_contenu">Corps de votre article : <textarea  name="corps" rows="500" cols="80"></textarea></p>
                 <a href="lecture.php"></a>
                 <label for="one">
                 </label>

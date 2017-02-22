@@ -1,22 +1,49 @@
-/**
+/*
 Crée le 23/01/17
 Auteur : Pierre Parrat
 Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
 
-/*
+
 .logo{
     
-    width: 9%;
+    width: 20%;
 }
 
 .avatar{
     width: 5%;
 }
 
+
+
+.titre{
+    font-size: 40px;
+    text-align: center;
+}
+
+.ecriture{
+    margin-top: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+fieldset{
+    border-radius: 10px;
+    background-color: #E7E6E6;
+    color: #212121;
+    font-family: 'Trebuchet MS';
+}
+
+.div_contenu{
+    background-color: #DEDCDC;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
 #fond_de_pages 
 { 
     background-color: #0C0C0C !important;    
 }
-*/
