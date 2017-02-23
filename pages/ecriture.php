@@ -1,6 +1,7 @@
 <?php
 /**
-  la page crée le 19/12/2016 par pierre parrat
+  la page créée le 19/12/2016 par Pierre Parrat
+ * modifiée par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles pour le site
  */
