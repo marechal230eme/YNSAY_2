@@ -1,6 +1,6 @@
 /*
 Crée le 23/01/17
-Auteur : Pierre Parrat
+Auteur : Pierre Parrat/Antoine Parant
 Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
@@ -46,6 +46,7 @@ fieldset{
     background-color: #DEDCDC;
     color: #212121;
     font-family: 'Trebuchet MS';
+    margin: auto 80;
 }
 
 #contenu_couleur{
@@ -54,10 +55,7 @@ fieldset{
 }
 .div_contenu{
     background-color: #E7E6E6;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px 60px 40px 60px;
     border-radius: 10px;
 }
 
