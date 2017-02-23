@@ -16,7 +16,7 @@ include '../objets/o_requete.php';
 
 $objet = new o_requete();
 
-$objet->Tag($id_tag, $nom_tag, $description_tag);
+$objet->recupere_tag($id_tag, $nom_tag, $description_tag);
 
 /*
 //voir ce que  les valeurs contiennent quand on débug 
