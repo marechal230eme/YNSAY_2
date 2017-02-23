@@ -9,6 +9,7 @@
 $id_tag;
 $nom_tag;
 $description_tag;
+$valeur_id ; 
 
 include '../objets/o_requete.php';
 
@@ -74,7 +75,8 @@ foreach ($description as $case) {
             foreach ($case_description[0] as $ligne) {
 
                 if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {
-                    echo"<option name='idTag[]' value=$case_description[0][$i] > " . ($case_description[1][$i]) . "  </option> ";
+                    $valeur_id  = $case_description[0][$i] ; 
+                    echo"<option name='idTag[]' value=$valeur_id > " . ($case_description[1][$i]) . "  </option> ";
                 }
                 $i++;
             }
