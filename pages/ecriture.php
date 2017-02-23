@@ -32,6 +32,7 @@ include '../includes/i_verification_session.php';
         <fieldset class="ecriture">
             <p class="titre">Exprimez-vous</p>
             <form method="post" action="../includes/i_verification_article.php">
+
                 <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
                     <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="focus" maxlength="100" required="Il vous un titre pour être remarqué !">
                 </p>
@@ -41,8 +42,11 @@ include '../includes/i_verification_session.php';
                 <a href="lecture.php"></a>
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'; ?>
+                
                <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Soumettre
+
             </form>
+            
         </fieldset> 
 
 

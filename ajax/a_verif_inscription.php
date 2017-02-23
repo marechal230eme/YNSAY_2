@@ -23,12 +23,12 @@ if (( isset($_GET['pseudo']) AND empty($_GET['pseudo']) ) || ((strlen($_GET['pse
 } else if ($_GET['mdp'] != $_GET['cmdp']) {                                                             // verification pour savoir si les deux mots de passe sont identique
     echo "Votre mot de passe et sa confirmation sont différents";
 }
-
 if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                                                                           //* verification si tout les champ sont ok
         isset($_GET['mdp']) AND ! empty($_GET['mdp']) AND                                                                            //*
         isset($_GET['cmdp']) AND ! empty($_GET['cmdp']) AND                                                                          //*
         isset($_GET['email']) AND ! empty($_GET['email']) AND ( strlen($_GET['pseudo']) <= 20) AND ( strlen($_GET['mdp']) <= 50)     //*
         AND ( strlen($_GET['cmdp']) <= 50) AND ( strlen($_GET['email']) <= 100) AND ( $_GET['mdp'] == $_GET['cmdp'])) {              //*
+
     try {
         $pseudo = $_GET['pseudo'];  //* creation des variables pour les metre dans la bdd
         $email = $_GET['email'];    //*
@@ -46,8 +46,10 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                      
                 } else if ($email === $ligne['email']) {    //* on verifie si l'on a déjà  un mail existant
                     $erreur = true;                         //* alors on met l'erreur a true et on sort
                     break;
+
                 }
             }
+
 
             if ($erreur != true) {                                                                          // si l'on a pas d'erreur
                 //On remplit une ligne dans la table utilisateur
@@ -56,8 +58,10 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                      
                 $stmt->bindParam(2, $email);                                                                //*
                 $stmt->bindParam(3, $mdp);                                                                  //*
                 $stmt->execute();                                                                           // on execute la commande sql
+
                 $_SESSION['inscrit'] = true;
                 echo 'OK';
+
             } else {                                    // sinon on affiche le message
                 echo "Pseudo ou e-mail déjà utilisés";
             }

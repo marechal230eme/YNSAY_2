@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -16,6 +17,7 @@ if (( isset($_GET['pseudo']) AND empty($_GET['pseudo']) ) || ((strlen($_GET['pse
 }
 if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND
         isset($_GET['mdp']) AND ! empty($_GET['mdp']) AND ( strlen($_GET['pseudo']) <= 20) AND ( strlen($_GET['mdp']) <= 50)) { // si les champs sont ok alors
+
     try {
         $pseudo = $_GET['pseudo'];
         $mdp = md5($_GET['mdp']);
@@ -43,5 +45,4 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND
     }
 }
 ?>
-
 
