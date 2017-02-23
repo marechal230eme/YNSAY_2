@@ -34,8 +34,8 @@ But de la page : répondre aux questions fréquentes
                     <p class="p_contenu">Pour filtrer les posts qui vous intéressent par sujet, cochez les tags correspondant à ce que vous voulez, et cliquez sur valider. Vous avez deux options de filtrage disponibles : "Au moins" pour afficher les posts qui possèdent les tags que vous souhaitez et éventuellement d'autres tags, et "Uniquement" pour afficher les posts qui ont ces tags et uniquement ceux-là. Si vous déselectionnez tous les tags, vous verrez par défaut les posts qui possèdent le tag général, qui est le tag rassemblant tous les posts qui n'ont pas de tags.</p>
                 </div>
        </fieldset>
-       
-        <?php include '../includes/i_footer.php';?>
-       
+              
     </body>
+     <?php include '../includes/i_footer.php';?>
+
 </html>

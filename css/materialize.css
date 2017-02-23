@@ -1656,7 +1656,7 @@
 }
 
 .orange-text {
-  color: #ff9800 !important;
+  color: #ff6600 !important;
 }
 
 .orange.lighten-5 {
@@ -4245,7 +4245,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.87);
 }
@@ -5162,7 +5162,7 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #fff;
+  background-color: #DEDCDC;
   margin: 0;
   display: none;
   min-width: 100px;
@@ -5186,11 +5186,11 @@ button.btn-floating {
 }
 
 .dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
-  background-color: #eee;
+  background-color: #4d4d4d;
 }
 
 .dropdown-content li.active.selected {
-  background-color: #e1e1e1;
+  background-color: #212121;
 }
 
 .dropdown-content li.divider {
@@ -5200,7 +5200,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #26a69a;
+  color: #FF6600;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
