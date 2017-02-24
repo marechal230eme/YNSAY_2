@@ -132,13 +132,34 @@ class o_requete
         return self::OK;
     }
     
+     public function recupere_connexion($pseudoOuMail, $motDePasse)
+    {
+        $mdp = md5($motDePasse);
+        $requete = "SELECT id_utilisateur, pseudo, email, password FROM utilisateur ORDER BY id_utilisateur";
+        $resultat = $this->exe_requete($requete);
+        if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
+        {
+            return $resultat;
+        }
+        foreach ($resultat as $ligne) 
+        {
+            if (($pseudoOuMail === $ligne['pseudo'] || $pseudoOuMail === $ligne['email'] ) AND ( $mdp === $ligne['password'])) 
+            {  
+                //TODO CREER SESSION
+                return self::OK;
+            }
+        }
+        return self::ERR_NOTFOUND;
+    }
+    
     public function recupere_article()
     {
         
     }
     
-    public function insere_inscription($pseudo, $email, $mdp)
+    public function insere_inscription($pseudo, $email, $motDePasse)
     {
+        $mdp = md5($motDePasse);
         //Récupère les données des eutres utilisateurs
         $requete = "SELECT id_utilisateur, pseudo, email FROM utilisateur ORDER BY id_utilisateur";
         $resultat = $this->exe_requete($requete);
