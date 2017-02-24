@@ -5,6 +5,15 @@
   Nom de la page : accueil.php
   Rôle : Page d'accueil du site
  */
+ 
+session_start();
+if(isset($_SESSION['pseudo']))
+{
+	if($_SESSION['pseudo'] != "") //si l'utilisateur est connecté, on le redirige vers la page d'accueil
+	{
+		header('Location: lecture.php');
+	}
+}
 ?>
 
 <html>
