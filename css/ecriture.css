@@ -29,8 +29,8 @@ Rôle : css de l'ecriture
 }
 
 #corps{
-    width: 80%;
-    height: 100%;
+    width: 70%;
+    height: 50%;
     display: block;
     margin: 10px auto 10px auto;
 }
@@ -46,7 +46,13 @@ fieldset{
     background-color: #DEDCDC;
     color: #212121;
     font-family: 'Trebuchet MS';
-    margin: auto 80;
+    margin: auto 80%;
+}
+
+textarea{
+    outline-color: #FF6600;
+    resize: none;
+    
 }
 
 #contenu_couleur{
