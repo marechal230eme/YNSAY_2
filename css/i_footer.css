@@ -1,0 +1,41 @@
+/**
+Crée le 31 janv. 2017
+Auteur : Romain Jacquiez
+Nom du css : i_footer
+Rôle : css du footer
+*/
+
+footer{
+    margin-top: 20px;
+    font-family: 'Trebuchet MS';
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.dessus_footer{
+    background-color: #0C0C0C;
+    text-align: center;
+}
+
+.dessous_footer{
+    background-color: black;
+    text-align: center;
+}
+
+.dessus_footer_contenu{
+    font-size: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    color: #FF6600;
+}
+
+.dessous_footer_contenu{
+    font-size: 15px;
+    color: #ABA7A7;
+    margin-left: 40px;
+    margin-right: 40px;
+}
