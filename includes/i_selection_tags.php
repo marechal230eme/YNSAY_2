@@ -78,7 +78,7 @@ foreach ($description as $case) {
                 if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {
 
                     $valeur_id  = $case_description[0][$i] ; 
-                    echo"<option name='idTag[]' value=$valeur_id > " . ($case_description[1][$i]) . "  </option> ";
+                    echo"<option  id=$valeur_id name='".$idTag[$i]=$valeur_id."' value=$valeur_id  > " . ($case_description[1][$i]) ."  </option> ";
                 }
                 $i++;
             }
@@ -97,11 +97,12 @@ $i = 0;
 foreach ($description as $case) {
 
     foreach ($case_description[0] as $ligne) {
-        var_dump($ligne);
-        var_dump($i);
+       // var_dump($ligne);
+       // var_dump($i);
 
         if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {
             var_dump($case_description[1][$i]);
+            var_dump($case_description[0][$i]);
         }
         $i++;
     }   

@@ -39,11 +39,12 @@ include '../includes/i_verification_session.php';
                 <p class="div_contenu">Corps de votre article <span id="contenu_couleur"> : </span> 
                     <textarea id="corps" name="corps" rows="20" cols="5" placeholder="Votre article ..." maxlength="500"></textarea>
                 </p>
-                <a href="lecture.php"></a>
+               
                 <label for="one" class="select_tags"> Sélection des tags </label>
+                
                 <?php include '../includes/i_selection_tags.php'; ?>
                 
-               <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Soumettre
+                <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Soumettre</button>
 
             </form>
             
