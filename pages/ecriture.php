@@ -41,17 +41,17 @@ include '../includes/i_verification_session.php';
                 </p>
 
                 <label for="one" class="select_tags"> Sélection des tags </label>
-                
+
                 <?php include '../includes/i_selection_tags.php'; ?>
-  
-               
+
+
                 <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
                     <i class="material-icons right">email</i>
                 </button>
 
 
             </form>
-            
+
         </fieldset> 
 
     </body>
