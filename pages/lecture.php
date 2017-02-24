@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+/*
+  la page crée le 19/12/2016 par pierre parrat
+  Nom de la page : ecriture.php
+  But de la page : ecriture des articles
+ */
+?>
+
 <html>
     <head>
+        <title>Ynsay</title>
         <meta charset="UTF-8">
-        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page de lecture  des articles" />
+        <link href="../css/lecture.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/materialize.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-    <?php
+    <body class="#212121 grey darken-4">
 
-        include('../twig/t_twig.php');
+        <header>
+            <!-- metre en place le logo a droite puis metre en place le nuage de tag et bouton envoyer dans le header  -->
+            <img class="logo" src="../images/logo.png" alt="Logo du site"/>
+        </header>
 
-        $template = $twig->loadTemplate('t_index.twig');
-            echo $template->render(array(
-                'img_profil' => '../images/avatar.png',
-            ));
-            
-    ?>
+
+
     </body>
+    <script src="../js/materialize.js" type="text/javascript"></script>
 </html>
