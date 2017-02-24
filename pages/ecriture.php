@@ -6,6 +6,11 @@ include '../includes/i_verification_session.php';
   Nom de la page : ecriture.php
   But de la page : ecriture des articles pour le site
  */
+ 
+if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+{
+	header('Location: accueil.php');
+}
 ?>
 
 <html>
