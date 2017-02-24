@@ -26,20 +26,18 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND
         $resultat = $dbh->query("SELECT id_utilisateur, pseudo, password FROM utilisateur ORDER BY id_utilisateur"); // requete sql pour savoir si l'on a un utilisateur connue
         $check = $resultat->fetch(PDO::FETCH_NUM);
         if ($check == true) {
-            foreach ($resultat as $ligne) {
+            foreach ($resultat as $ligne)
+            {                
                 if (($pseudo === $ligne['pseudo']) AND ( $mdp === $ligne['password'])) {  //verification du pseudo et du mot de passe
-                    $_SESSION['connecte'] = true;                   //* création de variable de session pour naviguer entre les pages
-                    $_SESSION['pseudo'] = $ligne['pseudo'];         //*
-                    $_SESSION['id'] = $ligne['id_utilisateur'];     //*
                     echo '42';
+                    /*GERER VARIABLES DE SESSIONS ICI*/
                     break;
-                }
+                }else{
+                 echo 'Aucun compte ne correspond à ces données';
             }
-            if ($_SESSION['connecte'] != true) {                // si on ne trouve pas un utilisateur on affiche le message suivant
-                echo 'Aucun compte ne correspond à ces données';
             }
-        }
-    } catch (PDOExeption $e) {                              //recupération des erreurs
+        } 
+    }catch (PDOExeption $e) {                              //recupération des erreurs
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();
     }
