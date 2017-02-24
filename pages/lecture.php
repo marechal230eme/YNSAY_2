@@ -4,22 +4,27 @@
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
  */
+session_start();
+if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+{
+	header('Location: accueil.php');
+}
 ?>
 
 <html>
     <head>
         <title>Ynsay</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php include '../includes/i_meta.php'; ?>
         <meta name="description" content="Page de lecture  des articles" />
         <link href="../css/lecture.css" rel="stylesheet" type="text/css"/>
         <link href="../css/materialize.css" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body class="#212121 grey darken-4">
 
         <header>
-            <!-- metre en place le logo a droite puis metre en place le nuage de tag et bouton envoyer dans le header  -->
-            <img class="logo" src="../images/logo.png" alt="Logo du site"/>
+            <!-- mettre en place le logo à droite puis mettre en place le nuage de tag et bouton "nouveau" dans le header  -->
+            <?php include '../includes/i_navbar_lecture.php'; ?>
         </header>
 
 
