@@ -133,25 +133,6 @@ class o_requete
         return self::OK;
     }
     
-    public function recupere_connexion($pseudo, $mdp)
-    {
-        $requete = "SELECT id_utilisateur, pseudo, password FROM utilisateur ORDER BY id_utilisateur";
-        $resultat = $this->exe_requete($requete);
-        if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
-        {
-            return $resultat;
-        }
-        foreach ($resultat as $ligne) 
-        {
-            if (($pseudo === $ligne['pseudo']) AND ( $mdp === $ligne['password'])) 
-            {  
-                //TODO CREER SESSION
-                return self::OK;
-            }
-        }
-        return self::ERR_NOTFOUND;
-    }
-    
     public function insere_inscription($pseudo, $email, $mdp)
     {
         //Récupère les données des eutres utilisateurs
