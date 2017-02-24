@@ -9,20 +9,17 @@
  
 ?>
 
- <link href="../css/i_navbar_tags.css" rel="stylesheet" type="text/css"/>
+<link href="../css/i_navbar_tags.css" rel="stylesheet" type="text/css"/>
 
  
 <ul class="topnav">
-    <img class="logo" src="../images/logo.png" alt=""/>
-    <li><a class="active" href="#home">Home</a></li>
-    
-    
-    
-
-
-    <li class="right"><input class="btn waves-effect waves-light btn-large orange accent-4" type="submit" value="Valider"></li>
+    <img class="logo" src="../images/logo.png" <a href="../pages/lecture.php"></a>
+    <li>
+        <button class="active btn waves-effect waves-light btn-large orange accent-4" >Home</button>
+    </li>
+    <!--<li class="right">
+        <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
+            <i class="material-icons right">email</i>
+        </button>
+    </li>-->
 </ul>
-
-
-
-

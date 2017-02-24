@@ -6,8 +6,9 @@ $id_tag;
 $nom_tag;
 $description_tag;
 
-$objet = new o_requete();
-$resultat = $objet->Tag($id_tag, $nom_tag, $description_tag);
+$objet = creeObjetRequete();
+
+$resultat = $objet->recupere_tag($id_tag, $nom_tag, $description_tag);
 
     echo '<table>';  //mise en place d'un tableau en html
     $descriptionAv = "";
@@ -29,3 +30,10 @@ $resultat = $objet->Tag($id_tag, $nom_tag, $description_tag);
     }
     echo '</table>';  // fin du tableau
     echo '<input type ="submit" value="envoyer" >' ;
+    
+    echo $objet->insere_inscription('theo', 't', 'oloul');
+    echo $objet->insere_inscription('rrrrr', 'rom@rom.fr', 'lool');
+    echo $objet->insere_inscription('nouveau', 'nouveau@nouv.fr', 'mdepasse');
+    
+    
+echo 'Ceci est la fiiiiin';
