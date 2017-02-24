@@ -13,13 +13,13 @@
 
  
 <ul class="topnav">
-    <img class="logo" src="../images/logo.png"/><a href="../pages/lecture.php"></a>
+    <img class="logo" src="../images/logo.png" <a href="../pages/lecture.php"></a>
     <li>
         <button class="active btn waves-effect waves-light btn-large orange accent-4" >Home</button>
     </li>
-    <li class="right">
-        <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Soumettre
+    <!--<li class="right">
+        <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
             <i class="material-icons right">email</i>
         </button>
-    </li>
+    </li>-->
 </ul>
