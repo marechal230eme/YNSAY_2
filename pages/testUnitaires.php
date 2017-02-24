@@ -35,5 +35,9 @@ $resultat = $objet->recupere_tag($id_tag, $nom_tag, $description_tag);
     echo $objet->insere_inscription('rrrrr', 'rom@rom.fr', 'lool');
     echo $objet->insere_inscription('nouveau', 'nouveau@nouv.fr', 'mdepasse');
     
-    
+    echo $objet->recupere_connexion('theo1', 'mdp');
+    echo $objet->recupere_connexion('theo1', 'oloul');
+    echo $objet->recupere_connexion('theo1', 'oloul');
+    echo $objet->recupere_connexion('nouveau@nouv.fr', 'mdp');
+    echo $objet->recupere_connexion('nouveau', 'mdepasse');
 echo 'Ceci est la fiiiiin';
