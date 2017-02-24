@@ -11,7 +11,7 @@ include '../includes/i_verification_session.php';
 <html>
     <head>
 
-        <title>Ecriture de vos article  </title>
+        <title>Ecriture de vos articles  </title>
         <?php include '../includes/i_meta.php'; ?>
         <meta name="description" content="Page d'écriture des articles" />
         <link href="../css/ecriture.css" rel="stylesheet" type="text/css"/>
