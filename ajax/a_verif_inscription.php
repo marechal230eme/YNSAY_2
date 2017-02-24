@@ -54,7 +54,7 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                      
     {
         $retour = $objet->insere_inscription($pseudo, $email, $mdp);
         /*je traite le retour de la methode pour qu'il correspond au data dans les test de formulaire.js*/
-        if ($retour == "ok")
+        if ($retour === "ok")
         {
             echo 'OK';
         }

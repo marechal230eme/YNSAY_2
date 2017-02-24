@@ -65,17 +65,17 @@ function request2(callback) {
 
 function readData(data, nb)
 {
-    if (nb === 1 && data != 42)
+    if (nb === 1 && data != '42')
     {
         document.getElementById("erreur").innerHTML = data;
     }
-    if (nb === 2 && data !== 'OK')
+    if (nb == 42 && data !== 'OK')
     {
         document.getElementById("erreur2").innerHTML = data;
     }
 
 
-    if (data == 42 && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (data === 'OOK' && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         document.location.href = "http://localhost/YNSAY_2/pages/lecture.php";
     }
