@@ -4,11 +4,21 @@ session_start();
 
 var_dump($_POST);
 
-$formulaireValide = true;
+ 
 
+
+//var_dump($id_tag);
+
+$formulaireValide = true;
+/*
 if ($_SESSION['connecte'] != true) {
     $formulaireValide = false;
     echo "Tu n'es pas connecté espèce de trash!";
+}*/
+if ((isset($_POST['idTag']) AND empty($_POST['idTag']))) 
+{
+    echo "les tag ne sont pas encore selectionnée ";
+    
 }
 if (( isset($_POST['titre']) AND empty($_POST['titre']) ) || ((strlen($_POST['titre'])) > 100)) {
     $formulaireValide = false;
@@ -34,7 +44,7 @@ if ($formulaireValide == true) {
     $idArticle = $dbh->lastInsertId(); //On récupère l'id de l'article, qui est actuellement le dernier rentré
     if (!isset($_POST['idTag'])) { //Si aucun tag sélectionné (note : dans la version finale du site, ceci sera une condition d'erreur car il devrait forcémment y avoir au moins un tag coché. On gère ce cas pour le moment pour les tests)
         echo "patate";
-        var_dump($id_tags);
+       // var_dump($id_tags);
 
         $stmt = $dbh->prepare("INSERT INTO a_pour_tag (id_article, id_tag) 
 			VALUES (:id_article, 999)"); //le tag general a pour id 2.

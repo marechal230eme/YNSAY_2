@@ -39,21 +39,20 @@ include '../includes/i_verification_session.php';
                 <p class="div_contenu">Corps de votre article <span id="contenu_couleur"> : </span> 
                     <textarea id="corps" name="corps" rows="20" cols="5" placeholder="Votre article ..." maxlength="500"></textarea>
                 </p>
+
                 <label for="one" class="select_tags"> Sélection des tags </label>
-                <?php include '../includes/i_selection_tags.php'; ?>
                 
+                <?php include '../includes/i_selection_tags.php'; ?>
+  
+               
                 <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
                     <i class="material-icons right">email</i>
                 </button>
 
+
             </form>
             
         </fieldset> 
-
-
-
-
-
 
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
