@@ -30,7 +30,7 @@ include '../includes/i_verification_session.php';
         </header>
 
         <fieldset class="ecriture">
-            <p class="titre">Exprimez-vous</p>
+            <!--<p class="titre">Exprimez-vous</p>-->
             <form method="post" action="../includes/i_verification_article.php">
 
                 <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
