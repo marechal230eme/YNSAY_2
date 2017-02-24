@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -9,6 +8,11 @@ session_start();
   Nom du php : verifConnexion
   But : Vérifier si les informations envoyées sont présentes dans la base de données
  */
+
+/*inclusion objet requete */
+include '../objets/o_requete.php';
+$objet = new o_requete();
+/*------------------------------*/
 
 if (( isset($_GET['pseudo']) AND empty($_GET['pseudo']) ) || ((strlen($_GET['pseudo'])) > 20)) {            // verification du champ du pseudo , si il est vide ou plus de 20 carcatères
     echo "Veuillez saisir un pseudo";
