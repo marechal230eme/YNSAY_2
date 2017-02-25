@@ -69,17 +69,12 @@ foreach ($description as $case) {                                               
                 
                 if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {  //*             //* on regarde pour chaque tag la description_tag associé , pour voire si elle correspond au description_tag de la selection  associé
                     
+                    $valeur_id = $case_description[0][$i];                                    //* valeur intermediaire qui indiquera la valeur que value (l'id du tag ) aura et qu'il deffinira a quoi l'article est associé lors de l'insertion dans la bdd          
                     
-                    echo"<option   name='" . $idTag[$i] . "' value=$valeur_id  > " . ($case_description[1][$i]) . "  </option> ";
-                
-                   
+                    echo"<option   name='" . $idTag[$i] . "' value=$valeur_id  > " . ($case_description[1][$i]) . "  </option> ";  //* case de selction des tag qui contien un name(un tableau qui devra contenir les case coché par l'utilisateur )  une value voir description ligne precedente , et me nom du tag associé 
                 }
-                $i++;
-                
-               
+                $i++;                                                                         //* variable d'incrementation pour parcourir le tableau  
             }
-            
-            $i = 0;
             $i = 0
             ?>
         </select>
