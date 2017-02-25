@@ -1,0 +1,11 @@
+/**
+Crée le 23/01/17
+Auteur : Romain JACQUIEZ
+Nom du css : verification_article.css
+Rôle : css d la page de verifiction des articles
+*/
+
+.erreurArticle{
+    color: #FF3333;
+    font-weight: bolder;
+}
