@@ -145,7 +145,8 @@ class o_requete
         {
             if (($pseudoOuMail === $ligne['pseudo'] || $pseudoOuMail === $ligne['email'] ) AND ( $mdp === $ligne['password'])) 
             {  
-                //TODO CREER SESSION
+                $_SESSION['pseudo'] = $ligne['pseudo'];
+			    $_SESSION['id'] = $ligne['id_utilisateur'];
                 return self::OK;
             }
         }
