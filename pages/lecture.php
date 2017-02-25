@@ -4,6 +4,11 @@
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
  */
+session_start();
+if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+{
+	header('Location: lecture.php');
+}
 ?>
 
 <html>

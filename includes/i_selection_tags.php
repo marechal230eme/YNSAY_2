@@ -35,7 +35,7 @@ foreach ($description_tag as $traitement) {                                     
     }                                                                                                             //**  
 }
 
-/*
+/*   
   echo 'description_tag apres traitement : ';
   var_dump($description);
  */
@@ -49,45 +49,40 @@ foreach ($id_tag as $construction) {                    //** pour le nombre d'id
     $i++;                                               //** variable d'incrémentation 
 }
 
-/*
+/* on peut voire le tableau qui permetra de faire le trie à la vollée des selection des tag
   echo 'valeur du tableau des case';
   var_dump($case_description);
  */
 
-$i = 0;
-foreach ($description as $case) {
+$i = 0;                                                                                       //* dans ces foreach on effectura un tri a la volée du tableau de case description                                              
+foreach ($description as $case) {                                                             //** pour chaque description_tag 
     ?>
-    <div class="input-field #212121 grey darken-4 orange-text col s12">
-        <select multiple>
+    <div class="input-field #212121 grey darken-4 orange-text col s12">                   <!--//* appel d'un select multiple de materialize               -->
+        <select multiple name="valeur_tags[]  ">                                                                 
             <?php
-            echo"<option value=\"\" disabled selected> $case </option>";
+            echo"<option value=\"\" disabled selected> $case </option>";                      //* la premiere case de selection ne peut pas etre coché et est affiché quand rien n'est cochée elle permet d'afficher la categorie qui correspond (promo , cycle , association , ect ... )  
             
-            foreach ($case_description[0] as $ligne) {
+            foreach ($case_description[0] as $ligne) {                                        //** pour chaque ligne du tableau 
 
-                if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {
-                    
-                    $valeur_id = $case_description[0][$i];
-                    
-                    echo"<option   name='" . $idTag[$i] . "' value=$valeur_id  > " . ($case_description[1][$i]) . "  </option> ";
+                // strnatcmp :  la fonction retourne < 0 si str1 est inférieure à str2; 
+                // > 0 si str1 est supérieure à str2, et 0 si les deux chaînes sont égales.
                 
-                   
+                if (((strnatcmp(($case_description[2][$i]), $case)) == 0)) {  //*             //* on regarde pour chaque tag la description_tag associé , pour voire si elle correspond au description_tag de la selection  associé
+                    
+                    $valeur_id = $case_description[0][$i];                                    //* valeur intermediaire qui indiquera la valeur que value (l'id du tag ) aura et qu'il deffinira a quoi l'article est associé lors de l'insertion dans la bdd          
+                    
+                    echo"<option   value=$valeur_id  > " . ($case_description[1][$i]) . "  </option> ";  //* case de selction des tag qui contien un name(un tableau qui devra contenir les case coché par l'utilisateur )  une value voir description ligne precedente , et me nom du tag associé 
                 }
-                $i++;
-                
-               
+                $i++;                                                                         //* variable d'incrementation pour parcourir le tableau  
             }
-            
-            $i = 0;
-            
+            $i = 0
             ?>
         </select>
-         
     </div>
     <?php
-     
 }
 
-/*
+/* // utile pour le debug ou voire ce qu 'il s'y passe 
 echo 'ce qu il se passe dans les foreach ';
 
 $i = 0;
