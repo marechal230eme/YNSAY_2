@@ -19,7 +19,7 @@ ul.topnav {
     border-radius: 10px;
 }
 
-//ul.topnav li {float: left;}
+/* ul.topnav li {float: left;}  */
 
 ul.topnav button {
     display: block;
