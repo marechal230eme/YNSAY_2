@@ -43,6 +43,8 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                      
         isset($_GET['email']) AND ! empty($_GET['email']) AND ( strlen($_GET['pseudo']) <= 20) AND ( strlen($_GET['mdp']) <= 50)     //*
         AND ( strlen($_GET['cmdp']) <= 50) AND ( strlen($_GET['email']) <= 100) AND ( $_GET['mdp'] == $_GET['cmdp'])) 
  { 
+    
+   
 
     $pseudo = $_GET['pseudo'];  //* creation des variables pour les metre dans la bdd
     $email = $_GET['email'];    //*
@@ -52,7 +54,11 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND                      
     /*si aucun messages d'erreur alors on insert*/
     if ($erreur != true)
     {
+      
         $retour = $objet->insere_inscription($pseudo, $email, $mdp);
+        
+      
+        
         /*je traite le retour de la methode pour qu'il correspond au data dans les test de formulaire.js*/
         if ($retour === "ok")
         {
