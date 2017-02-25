@@ -15,7 +15,7 @@ if ($_SESSION['connecte'] != true) {
     $formulaireValide = false;
     echo "Tu n'es pas connecté espèce de trash!";
 }*/
-if ((isset($_POST['idTag']) AND empty($_POST['idTag']))) 
+if ((isset($_POST['valeur_tags']) AND empty($_POST['valeur_tags']))) 
 {
     echo "les tag ne sont pas encore selectionnée ";
     
@@ -42,7 +42,7 @@ if ($formulaireValide == true) {
     $stmt->bindValue(':id_utilisateur', $idUtilisateur);
     $stmt->execute(); //On insère l'article dans la base
     $idArticle = $dbh->lastInsertId(); //On récupère l'id de l'article, qui est actuellement le dernier rentré
-    if (!isset($_POST['idTag'])) { //Si aucun tag sélectionné (note : dans la version finale du site, ceci sera une condition d'erreur car il devrait forcémment y avoir au moins un tag coché. On gère ce cas pour le moment pour les tests)
+    if (!isset($_POST['valeur_tags'])) { //Si aucun tag sélectionné (note : dans la version finale du site, ceci sera une condition d'erreur car il devrait forcémment y avoir au moins un tag coché. On gère ce cas pour le moment pour les tests)
         echo "patate";
        // var_dump($id_tags);
 
@@ -52,8 +52,8 @@ if ($formulaireValide == true) {
         $stmt->execute(); //On applique le tag général
     } else { //Sinon
         echo "OUIIIIIIIIIII";
-        $id_tags = $_POST['idTag']; //Le tableau de tags est copié dans une variable
-        var_dump($id_tags);
+        $id_tags = $_POST['valeur_tags']; //Le tableau de tags est copié dans une variable
+      //  var_dump($id_tags);
         $nbTags = count($id_tags); //On récupère le nombre de tags choisis
         for ($i = 0; $i < $nbTags; $i++) { //On applique tous les tags
             $stmt = $dbh->prepare("INSERT INTO a_pour_tag (id_article, id_tag)

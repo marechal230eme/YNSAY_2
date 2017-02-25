@@ -1,17 +1,21 @@
 <?php
-include '../includes/i_verification_session.php';
 /**
   la page créée le 19/12/2016 par Pierre Parrat
  * modifiée par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles pour le site
  */
+session_start();
+if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+{
+	header('Location: accueil.php');
+}
 ?>
 
 <html>
     <head>
 
-        <title>Ecriture de vos article  </title>
+        <title>Ecriture de vos articles  </title>
         <?php include '../includes/i_meta.php'; ?>
         <meta name="description" content="Page d'écriture des articles" />
         <link href="../css/ecriture.css" rel="stylesheet" type="text/css"/>
@@ -41,17 +45,17 @@ include '../includes/i_verification_session.php';
                 </p>
 
                 <label for="one" class="select_tags"> Sélection des tags </label>
-                
+
                 <?php include '../includes/i_selection_tags.php'; ?>
-  
-               
+
+
                 <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
                     <i class="material-icons right">email</i>
                 </button>
 
 
             </form>
-            
+
         </fieldset> 
 
     </body>

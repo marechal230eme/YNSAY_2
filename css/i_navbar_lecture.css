@@ -4,14 +4,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 30 janv. 2017, 22:31:52
-    Author     : Parrat Pierre/Parant Antoine
-    but : css de la bar de nav des tags 
+    Created on : 24 févr. 2017, 16:17:11
+    Author     : Antoine Parant
 */
-
-/************** Partie de la navbar  ******************/
-
-
 
 body {margin: 2px;}
 
@@ -24,14 +19,12 @@ ul.topnav {
     border-radius: 10px;
 }
 
-ul.topnav li {float: left;}
+/* ul.topnav li {float: left;}  */
 
-/*ul.topnav li button {
+ul.topnav button {
     display: block;
     color: white;
     text-align: center;
-    text-decoration: none;
-    margin: 10%;
 }
 
 ul.topnav li button:hover:not(.active) {background-color: #111;}
@@ -44,16 +37,10 @@ ul.topnav li button.active {background-color:  #FF6600;}
 
  ul.topnav li.right {
     float: right;
-    background-color: #212121;
-    
-}*/
-
-@media screen and (max-width: 600px){
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
+    margin: 50px 65px 5px auto;
+    background-color: #212121 !important; 
+    border-radius: 50px !important;
 }
-
-/* gestion du LOGO : */ 
 
 .logo{
     width: 120px;
@@ -71,3 +58,4 @@ ul.topnav li button.active {background-color:  #FF6600;}
     margin-left: 15%;
     text-align: center; 
 }
+
