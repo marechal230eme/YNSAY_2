@@ -75,11 +75,8 @@ function readData(data, nb)
     }
 
 
-<<<<<<< HEAD
-    if (data === 'OK' && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-=======
+
     if (data == '42' && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
->>>>>>> refs/remotes/origin/master
     {
         document.location.href = "http://localhost/YNSAY_2/pages/lecture.php";
     }
