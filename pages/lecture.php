@@ -7,7 +7,7 @@
 session_start();
 if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
 {
-	header('Location: accueil.php');
+	header('Location: lecture.php');
 }
 ?>
 

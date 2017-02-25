@@ -39,7 +39,7 @@ if (isset($_GET['pseudo']) AND ! empty($_GET['pseudo'])AND
         /*je traite le retour de la methode pour qu'il correspond au data dans les test de formulaire.js*/
         if ($retour === "ok")
         {
-            echo '42';
+            echo '1';
         } else {
             echo "Aucun résultat trouvé";
         }
