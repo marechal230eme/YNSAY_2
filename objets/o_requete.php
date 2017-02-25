@@ -114,7 +114,7 @@ class o_requete
     
     public function recupere_tag(&$id_tag, &$nom_tag, &$description_tag)
     {
-        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY description_tag";
+        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY id_tag";
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
