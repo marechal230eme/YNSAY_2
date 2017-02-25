@@ -1,12 +1,11 @@
 <?php
-include '../includes/i_verification_session.php';
 /**
   la page créée le 19/12/2016 par Pierre Parrat
  * modifiée par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles pour le site
  */
- 
+session_start();
 if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
 {
 	header('Location: accueil.php');
