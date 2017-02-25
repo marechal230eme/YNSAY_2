@@ -15,7 +15,7 @@ include '../objets/o_requete.php';
 $objet = new o_requete();
 $objet->recupere_tag($id_tag, $nom_tag, $description_tag);
 
-/*
+
   //voir ce que  les valeurs contiennent quand on débug
   echo "id_tag";
   var_dump($id_tag);
@@ -23,7 +23,7 @@ $objet->recupere_tag($id_tag, $nom_tag, $description_tag);
   var_dump($nom_tag);
   echo "description_tag";
   var_dump($description_tag);
- */
+ 
 
 $i = 0;                                                                                                           //variable d'incrémentation
 $description[$i] = $description_tag[0];                                                                           // initialisation de la variable desription qui contiendra une descripton_de_tag par tag
