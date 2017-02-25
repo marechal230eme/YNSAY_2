@@ -27,7 +27,7 @@ class o_requete
 {
     private $DBH; //Variable PDO
     private $ERR_MESSAGE;
-    const OK = "";
+    const OK = "ok";
     const ERR_CONNECTION = "Une erreur est survenue, impossible de se connecter à la base de données";
     const ERR_NOTFOUND = "Aucun résultat trouvé";
     const USER_ALREADY_EXISTS = "Pseudo ou e-mail déjà utilisés";
@@ -113,9 +113,8 @@ class o_requete
     
     
     public function recupere_tag(&$id_tag, &$nom_tag, &$description_tag)
-
     {
-        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag";
+        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY description_tag";
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
@@ -133,8 +132,34 @@ class o_requete
         return self::OK;
     }
     
-    public function insere_inscription($pseudo, $email, $mdp)
+     public function recupere_connexion($pseudoOuMail, $motDePasse)
     {
+        $mdp = md5($motDePasse);
+        $requete = "SELECT id_utilisateur, pseudo, email, password FROM utilisateur ORDER BY id_utilisateur";
+        $resultat = $this->exe_requete($requete);
+        if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
+        {
+            return $resultat;
+        }
+        foreach ($resultat as $ligne) 
+        {
+            if (($pseudoOuMail === $ligne['pseudo'] || $pseudoOuMail === $ligne['email'] ) AND ( $mdp === $ligne['password'])) 
+            {  
+                //TODO CREER SESSION
+                return self::OK;
+            }
+        }
+        return self::ERR_NOTFOUND;
+    }
+    
+    public function recupere_article()
+    {
+        
+    }
+    
+    public function insere_inscription($pseudo, $email, $motDePasse)
+    {
+        $mdp = md5($motDePasse);
         //Récupère les données des eutres utilisateurs
         $requete = "SELECT id_utilisateur, pseudo, email FROM utilisateur ORDER BY id_utilisateur";
         $resultat = $this->exe_requete($requete);
@@ -157,6 +182,39 @@ class o_requete
             $this->ERR_MESSAGE = $e->getMessage();
             return self::ERR_CONNECTION;
         }
+        return self::OK;
+    }
+    
+
+    // WARNING : $idTags doit être un tableau de la forme $idTags[int]
+    public function insere_article($titre, $corps, $idUtilisateur, $idTags)
+    {
+        try {
+            $stmt = $this->DBH->prepare("INSERT INTO article (titre, contenu, id_utilisateur) VALUES (?,?,?)");
+            $stmt->bindValue(1, $titre);
+            $stmt->bindValue(2, $corps);
+            $stmt->bindValue(3, $idUtilisateur);
+            $stmt->execute();
+        } catch (PDOExeption $e) {
+            $this->ERR_MESSAGE = $e->getMessage();
+            return self::ERR_CONNECTION;
+        }
+        $idArticle = $this->DBH->lastInsertId();
+        if($idTags == NULL) {
+            $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
+            $stmt->bindValue(':id_article', $idArticle);
+            $stmt->bindValue(':id_tag', "1");
+            $stmt->execute();
+	}
+	else {
+            $nbTags = count($idTags);
+            for($i=0; $i < $nbTags; $i++) {
+                $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
+		$stmt->bindValue(':id_article', $idArticle);
+		$stmt->bindValue(':id_tag', $idTags[$i]);
+		$stmt->execute(); 
+            }
+	}
         return self::OK;
     }
     
