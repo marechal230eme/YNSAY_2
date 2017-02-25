@@ -9,9 +9,9 @@
 session_start();
 if(isset($_SESSION['pseudo']))
 {
-	if($_SESSION['pseudo'] != "") //si l'utilisateur est connecté, on le redirige vers la page d'accueil
+	if($_SESSION['pseudo'] != "") //si l'utilisateur est connecté, on le redirige vers la page de lecture
 	{
-		header('Location: accueil.php');
+		header('Location: lecture.php');
 	}
 }
 ?>
