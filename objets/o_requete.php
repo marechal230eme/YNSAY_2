@@ -204,7 +204,7 @@ class o_requete
         if($idTags == NULL) {
             $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
             $stmt->bindValue(':id_article', $idArticle);
-            $stmt->bindValue(':id_tag', "1");
+            $stmt->bindValue(':id_tag', "2");
             $stmt->execute();
 	}
 	else {
