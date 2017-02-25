@@ -114,7 +114,7 @@ class o_requete
     
     public function recupere_tag(&$id_tag, &$nom_tag, &$description_tag)
     {
-        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY description_tag";
+        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY id_tag";
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
@@ -132,7 +132,7 @@ class o_requete
         return self::OK;
     }
     
-     public function recupere_connexion($pseudoOuMail, $motDePasse)
+    public function recupere_connexion($pseudoOuMail, $motDePasse)
     {
         $mdp = md5($motDePasse);
         $requete = "SELECT id_utilisateur, pseudo, email, password FROM utilisateur ORDER BY id_utilisateur";
@@ -146,16 +146,64 @@ class o_requete
             if (($pseudoOuMail === $ligne['pseudo'] || $pseudoOuMail === $ligne['email'] ) AND ( $mdp === $ligne['password'])) 
             {  
                 $_SESSION['pseudo'] = $ligne['pseudo'];
-			    $_SESSION['id'] = $ligne['id_utilisateur'];
+                $_SESSION['id'] = $ligne['id_utilisateur'];
                 return self::OK;
             }
         }
         return self::ERR_NOTFOUND;
     }
     
-    public function recupere_article()
+    /* Récupère les articles dans le tableau $articles passé en paramètre
+     * Chaque case de $articles est un tableau contenant les cases 
+     * ['id_article']['titre']['contenu']['pseudo']
+     * $orderby : mode de tri par 'id' 'titre' ou 'auteur'
+     * $descAsc : mode de tri 'asc' ou 'desc'
+     * Tout autre valeur de paramètre est ignorée
+     */
+    public function recupere_article(&$articles, $orderBy, $descAsc)
     {
+        $requete = "SELECT id_article, titre, contenu, pseudo FROM article "
+                . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur";
+
+        if ($orderBy === 'id')
+        {
+            $requete = $requete . " ORDER BY id_article";
+        }
+        else if ($orderBy === 'titre' )  
+        {
+            $requete = $requete . " ORDER BY titre";
+        }
+        else if ($orderBy === 'auteur' )
+        {
+            $requete = $requete . " ORDER BY pseudo";                
+        }
+        else 
+        {
+            $descAsc = 'none';
+        }
+
+        if ($descAsc === 'desc')
+        {
+            $requete = $requete . " DESC";
+        }
+        if ($descAsc === 'asc')
+        {
+            $requete = $requete . " ASC";
+        }
         
+        $resultat = $this->exe_requete($requete);
+        
+        if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
+        {
+            return $resultat;
+        }
+        $i = 0;
+        foreach ($resultat as $article)
+        {
+            $articles[$i] = $article;
+            $i++;     
+        }
+        return self::OK;
     }
     
     public function insere_inscription($pseudo, $email, $motDePasse)
@@ -204,7 +252,7 @@ class o_requete
         if($idTags == NULL) {
             $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
             $stmt->bindValue(':id_article', $idArticle);
-            $stmt->bindValue(':id_tag', "1");
+            $stmt->bindValue(':id_tag', "2");
             $stmt->execute();
 	}
 	else {
