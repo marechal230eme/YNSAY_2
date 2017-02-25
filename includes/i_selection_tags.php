@@ -58,7 +58,7 @@ $i = 0;                                                                         
 foreach ($description as $case) {                                                             //** pour chaque description_tag 
     ?>
     <div class="input-field #212121 grey darken-4 orange-text col s12">                   <!--//* appel d'un select multiple de materialize               -->
-        <select multiple name="valeur_tags[]">                                                                 
+        <select multiple name="valeur_tags[]  ">                                                                 
             <?php
             echo"<option value=\"\" disabled selected> $case </option>";                      //* la premiere case de selection ne peut pas etre coché et est affiché quand rien n'est cochée elle permet d'afficher la categorie qui correspond (promo , cycle , association , ect ... )  
             
