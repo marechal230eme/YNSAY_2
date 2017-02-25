@@ -65,7 +65,7 @@ function request2(callback) {
 
 function readData(data, nb)
 {
-    if (nb === 1 && data != '42')
+    if (nb === 1 && data !== '1')
     {
         document.getElementById("erreur").innerHTML = data;
     }
@@ -74,8 +74,7 @@ function readData(data, nb)
         document.getElementById("erreur2").innerHTML = data;
     }
 
-
-    if (data == '42' && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (data == 1 && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
         document.location.href = "http://localhost/YNSAY_2/pages/lecture.php";
     }
