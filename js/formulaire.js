@@ -65,7 +65,7 @@ function request2(callback) {
 
 function readData(data, nb)
 {
-    if (nb === 1 && data !== '42')
+    if (nb === 1 && data != '42')
     {
         document.getElementById("erreur").innerHTML = data;
     }
