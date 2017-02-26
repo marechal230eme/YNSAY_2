@@ -45,12 +45,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                 </button></a>
             </form>
         </fieldset>
-        
-        <!--Provisoire-->
-        <fieldset class="article">
-            Fieldset à dégager, sample d'article.
-        </fieldset>
-        <!--**********-->
+        <fieldset id="invisible"></fieldset>
         
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
