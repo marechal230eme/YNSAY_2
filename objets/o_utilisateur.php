@@ -33,6 +33,7 @@ class o_utilisateur {
 	{
 		$_SESSION = array(); //on vire les variables de session
 		session_destroy(); //on arrête la session
+                header('Location: ../accueil.php');
 		return self::OK;
 	}
 }
