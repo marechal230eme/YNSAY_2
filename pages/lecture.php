@@ -1,6 +1,7 @@
 <?php
 /*
   la page crée le 19/12/2016 par pierre parrat
+ * modifié par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
  */
@@ -27,8 +28,14 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <?php include '../includes/i_navbar_lecture.php'; ?>
         </header>
 
-
-
+        <fieldset class="user">
+            <p class="infos_user">
+                <img id="wip" src="../images/work_in_progress.jpg" alt=""/>
+            </p> 
+        </fieldset>
+        <fieldset class="article">
+            Fieldset à dégager, sample d'article.
+        </fieldset>
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
 </html>
