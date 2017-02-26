@@ -30,7 +30,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
 
         <fieldset class="user">
             <p class="infos_user">
-                <img id="wip" src="../images/work_in_progress.jpg" alt=""/>
+             <?php include '../includes/i_sidebar_utilisateur.php'; ?>  
             </p> 
         </fieldset>
         
@@ -51,18 +51,21 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <?php 
                 $objet3 = new o_requete();
                 
-                if (!isset($_GET['valeur_tags'])) {
+                if (!isset($_POST['valeur_tags'])) {
                             $idTags = NULL;
                         } else {
-                            $idTags = $_GET['valeur_tags'];
+                            $idTags = $_POST['valeur_tags'];
                         }
+                        
                         
                 $orderBy = 'id';
                 $descAsc = 'asc';
-                
                 $articles;
                 
-                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc);
+               
+                
+                $retour3 = $objet3->recupere_article($articles, $ligne, $descAsc);
+               
                 
                 for ($i = 0; $i < sizeof($articles);){
                     echo $articles[$i]['pseudo']. "</br>";
