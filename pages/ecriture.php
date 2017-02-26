@@ -42,7 +42,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                     <?php include '../includes/i_selection_tags.php'; ?>
 
                 <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
-                    <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="focus" maxlength="100" required="requis">
+                    <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="" maxlength="100" required="">
                 </p>
                 <p class="div_contenu">Corps de votre article <span id="contenu_couleur"> : </span> 
                     <textarea id="corps" name="corps" rows="20" cols="5" placeholder="Votre article ..." maxlength="500"></textarea>
@@ -50,10 +50,8 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                 
                 <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
                     <i class="material-icons right">email</i>
-                </button>
-                
+                </button>                
             </form>
-
         </fieldset> 
 
     </body>
