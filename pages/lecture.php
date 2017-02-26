@@ -31,12 +31,12 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
 
         <fieldset class="user">
             <p class="infos_user">
-                <img id="wip" src="../images/work_in_progress.jpg" alt=""/>
+              <?php include '../includes/i_sidebar_utilisateur.php'; ?>
             </p> 
         </fieldset>
         
         <fieldset class="selection">
-            <form method="get" action="lecture_articles.php">
+            <form method="POST" action="lecture_articles.php">
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
                 <a href="../pages/lecture.php">
