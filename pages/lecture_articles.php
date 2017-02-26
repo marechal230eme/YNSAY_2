@@ -1,6 +1,5 @@
 <?php
 /*
-  la page crée le 19/12/2016 par pierre parrat
  * modifié par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
@@ -39,18 +38,40 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <form method="get" action="lecture_articles.php">
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
+                
                 <a href="../pages/lecture.php">
                     <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
                         <i class="material-icons right">done</i>
-                </button></a>
+                    </button>
+                </a>
             </form>
         </fieldset>
-        
-        <!--Provisoire-->
+       
         <fieldset class="article">
-            Fieldset à dégager, sample d'article.
+            <?php 
+                $objet3 = new o_requete();
+                
+                if (!isset($_GET['valeur_tags'])) {
+                            $idTags = NULL;
+                        } else {
+                            $idTags = $_GET['valeur_tags'];
+                        }
+                        
+                $orderBy = 'id';
+                $descAsc = 'asc';
+                
+                $articles;
+                
+                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc);
+                
+                for ($i = 0; $i < sizeof($articles);){
+                    echo $articles[$i]['pseudo']. "</br>";
+                    echo $articles[$i]['titre']. "</br>";
+                    echo $articles[$i]['contenu']. "</br>";
+                    $i++;
+                }
+            ?>
         </fieldset>
-        <!--**********-->
         
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
