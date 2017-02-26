@@ -60,21 +60,13 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                         
                         
                 $orderBy = 'id';
-<<<<<<< HEAD
-                $descAsc = 'asc';
-                $articles;
-                
-               
-                
-                $retour3 = $objet3->recupere_article($articles, $ligne, $descAsc);
-               
-=======
+
                 $descAsc = 'desc';
                 
                 $articles;
 
                 $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc);
->>>>>>> refs/remotes/origin/master
+
                 
                 for ($i = 0; $i < sizeof($articles);){
                     echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
