@@ -37,13 +37,29 @@ Rôle : css de l'ecriture
     height: 90%
 }
 
-/*CSS du sample d'article*/
-
 .article{
     color: #000000;
     background-color: #DEDCDC;
-    margin: 5px;
+    margin: 10px;
     border: none;
     border-radius: 10px;
     height: 50%;
 }
+
+.selection{
+    border: none;
+    background-color: #DEDCDC;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#bouton_selection{
+    float: right;
+}
+
+.select_tags{
+    font-size: 35px;
+    color: #0C0C0C;
+}
+
+
