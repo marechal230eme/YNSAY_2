@@ -43,9 +43,32 @@ Rôle : css de l'ecriture
     margin: 10px;
     border: none;
     border-radius: 10px;
-    height: 50%;
+    height: max-content;
+}
+#articulos{
+    color: #DEDCDC;
+    background-color: #212121;
+    border-radius: 10px;
+    margin: 25px;
 }
 
+#titulo{
+    color: #FF6600;
+    padding-left: 5px;
+    margin: 5px;
+}
+
+#contenido{
+    padding: 20px;
+    text-align: justify;
+}
+
+#autor{
+    color: #000000;
+    //float: right;
+    padding-left: 50px;
+    margin-right: 20px;
+}
 .selection{
     border: none;
     background-color: #DEDCDC;
@@ -62,4 +85,7 @@ Rôle : css de l'ecriture
     color: #0C0C0C;
 }
 
-
+#invisible{
+    height: 100%;
+    border: none;
+}

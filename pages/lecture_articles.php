@@ -1,5 +1,6 @@
 <?php
 /*
+  la page crée le 26/02/2017 par Antoine Parant
  * modifié par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
@@ -59,6 +60,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                         
                         
                 $orderBy = 'id';
+<<<<<<< HEAD
                 $descAsc = 'asc';
                 $articles;
                 
@@ -66,11 +68,18 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                 
                 $retour3 = $objet3->recupere_article($articles, $ligne, $descAsc);
                
+=======
+                $descAsc = 'desc';
+                
+                $articles;
+
+                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc);
+>>>>>>> refs/remotes/origin/master
                 
                 for ($i = 0; $i < sizeof($articles);){
-                    echo $articles[$i]['pseudo']. "</br>";
-                    echo $articles[$i]['titre']. "</br>";
-                    echo $articles[$i]['contenu']. "</br>";
+                    echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
+                    echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
+                    echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
                     $i++;
                 }
             ?>
