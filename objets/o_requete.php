@@ -72,10 +72,14 @@ class o_requete
     {
         try
         {
-            $resultat = $this->DBH->query($requete);
-            $check = $resultat->fetch(PDO::FETCH_NUM);
-            if ($check == true)
+            $prepare = $this->DBH->prepare($requete);
+            $prepare->execute();
+            $resultat = $prepare->fetchAll();   
+            //$resultat = $this->DBH->query($requete);
+            //$check = $resultat->fetchAll();
+            if (true)
             {
+                
                 return $resultat;    
             }
             else
@@ -124,6 +128,7 @@ class o_requete
         $i = 0;
         foreach ($resultat as $ligne)
         {
+            var_dump($ligne);
             $id_tag[$i] = $ligne['id_tag'];
             $nom_tag[$i] = $ligne['nom_tag'];
             $description_tag[$i] = $ligne['description_tag'];
