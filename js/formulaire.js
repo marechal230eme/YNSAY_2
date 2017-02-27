@@ -74,7 +74,7 @@ function readData(data, nb)
         document.getElementById("erreur2").innerHTML = data;
     }
 
-    if (data == 1 && nb === 1)   // il y a une couille ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (data == 1 && nb === 1)
     {
         document.location.href = "http://localhost/YNSAY_2/pages/lecture.php";
     }

@@ -72,10 +72,14 @@ class o_requete
     {
         try
         {
-            $resultat = $this->DBH->query($requete);
-            $check = $resultat->fetch(PDO::FETCH_NUM);
-            if ($check == true)
+            $prepare = $this->DBH->prepare($requete);
+            $prepare->execute();
+            $resultat = $prepare->fetchAll();   
+            //$resultat = $this->DBH->query($requete);
+            //$check = $resultat->fetchAll();
+            if (true)
             {
+                
                 return $resultat;    
             }
             else
@@ -124,6 +128,7 @@ class o_requete
         $i = 0;
         foreach ($resultat as $ligne)
         {
+            var_dump($ligne);
             $id_tag[$i] = $ligne['id_tag'];
             $nom_tag[$i] = $ligne['nom_tag'];
             $description_tag[$i] = $ligne['description_tag'];
@@ -160,11 +165,27 @@ class o_requete
      * $descAsc : mode de tri 'asc' ou 'desc'
      * Tout autre valeur de paramètre est ignorée
      */
-    public function recupere_article(&$articles, $orderBy, $descAsc)
+    public function recupere_article(&$articles, $orderBy, $descAsc, $ids)
     {
-        $requete = "SELECT id_article, titre, contenu, pseudo FROM article "
-                . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur";
-
+        $requete = "SELECT DISTINCT article.id_article, titre, contenu, pseudo FROM article "
+                . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur"
+                . " INNER JOIN a_pour_tag ON article.id_article = a_pour_tag.id_article";
+        
+        if ($ids[0] !== 2)
+        {
+            $requete = $requete . " WHERE a_pour_tag.id_tag = ";
+        
+            for ($i = 0; $i < sizeof($ids); $i++)
+            {
+                $requete = $requete . $ids[$i];
+                if ($i < sizeof($ids) - 1)
+                {
+                    $requete = $requete . " OR ";
+                }
+            }
+        }
+        
+        
         if ($orderBy === 'id')
         {
             $requete = $requete . " ORDER BY id_article";
@@ -181,7 +202,6 @@ class o_requete
         {
             $descAsc = 'none';
         }
-
         if ($descAsc === 'desc')
         {
             $requete = $requete . " DESC";

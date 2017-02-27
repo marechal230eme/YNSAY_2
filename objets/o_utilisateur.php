@@ -14,7 +14,7 @@ if (session_status() == PHP_SESSION_NONE) //on démarre une session si ce n'est 
 
 class o_utilisateur {
 	const OK = "ok";
-    const ERR_DOESNOTEXIST = "ce que vous recherchez n'existe pas.";
+    const ERR_DOESNOTEXIST = "Ce que vous recherchez n'existe pas.";
 	
 	public function recupere_pseudo() //fonction qui retourne le pseudo de l'utilisateur connecté, ou ERR_DOESNOTEXIST si il n'est pas connecté.
 	{
@@ -33,6 +33,7 @@ class o_utilisateur {
 	{
 		$_SESSION = array(); //on vire les variables de session
 		session_destroy(); //on arrête la session
+                header('Location: ../pages/accueil.php');
 		return self::OK;
 	}
 }
