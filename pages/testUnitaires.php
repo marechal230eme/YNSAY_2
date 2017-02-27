@@ -11,6 +11,8 @@ $objet = creeObjetRequete();
 $articles;
 $objet->recupere_article($articles, "titre", "asc");
 
+
+
 foreach ($articles as $article)
 {
     echo $article['id_article'] . "</br>" . $article['titre'] . "</br>" . $article['contenu'] . "</br>" . $article['pseudo'] . "</br>";

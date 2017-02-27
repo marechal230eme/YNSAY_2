@@ -9,11 +9,12 @@
 $id_tag;
 $nom_tag;
 $description_tag;
-$valeur_id;
+//$valeur_id;
 
 include '../objets/o_requete.php';
 $objet = new o_requete();
 $objet->recupere_tag($id_tag, $nom_tag, $description_tag);
+
 
 /*
   //voir ce que  les valeurs contiennent quand on débug
@@ -29,16 +30,16 @@ $i = 0;                                                                         
 $description[$i] = $description_tag[0];                                                                           // initialisation de la variable desription qui contiendra une descripton_de_tag par tag
 
 foreach ($description_tag as $traitement) {                                                                       //**pout chaque ligne de description de description tag on fait :
-    if (((strnatcmp($description[$i], $traitement)) < 0) || ((strnatcmp($description[$i], $traitement)) > 0)) {   //* comparaison des 2 chaine 2 caractère pour eviter les doublons 
+    if ((strnatcmp($description[$i], $traitement)) !=0 ) {   //* comparaison des 2 chaine 2 caractère pour eviter les doublons 
         $i++;                                                                                                     //* incrémenttion du tableau sans doublons
         $description[$i] = $traitement;                                                                           //* insertion des valeur qui ne sont pas en doublons 
     }                                                                                                             //**  
 }
 
-/*   
+/*
   echo 'description_tag apres traitement : ';
   var_dump($description);
- */
+*/
 
 $i = 0;                                                 // valeur remise à 0 pour l'incrémentation   
 
@@ -103,3 +104,4 @@ foreach ($description as $case) {
 }
 
 */
+
