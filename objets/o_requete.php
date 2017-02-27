@@ -74,18 +74,8 @@ class o_requete
         {
             $prepare = $this->DBH->prepare($requete);
             $prepare->execute();
-            $resultat = $prepare->fetchAll();   
-            //$resultat = $this->DBH->query($requete);
-            //$check = $resultat->fetchAll();
-            if (true)
-            {
-                
-                return $resultat;    
-            }
-            else
-            {
-                return self::ERR_NOTFOUND;
-            }
+            $resultat = $prepare->fetchAll();       
+            return $resultat;    
         } catch (PDOExeption $e) 
         {
             $this->ERR_MESSAGE = $e->getMessage();
@@ -128,7 +118,6 @@ class o_requete
         $i = 0;
         foreach ($resultat as $ligne)
         {
-            var_dump($ligne);
             $id_tag[$i] = $ligne['id_tag'];
             $nom_tag[$i] = $ligne['nom_tag'];
             $description_tag[$i] = $ligne['description_tag'];
