@@ -16,9 +16,10 @@ Rôle : css de l'ecriture
     background-color: #444;
     float: left;
     width: 200px;
-    height: 60%;
+    height: 100%;
     border: none;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .infos_user{
@@ -28,7 +29,7 @@ Rôle : css de l'ecriture
     margin-top: 15px;
     padding: 2px;
     border-radius: 5px;
-    height: 60%;
+    height: 30%;
 }
 
 #wip{

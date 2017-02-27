@@ -8,7 +8,7 @@
 session_start();
 if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
 {
-	header('Location: lecture.php');
+	header('Location: accueil.php');
 }
 ?>
 
@@ -36,24 +36,21 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         </fieldset>
         
         <fieldset class="selection">
-            <form method="get" action="lecture_articles.php">
+            <form method="POST" action="lecture.php">
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
                 
-                <a href="../pages/lecture.php">
                     <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
                         <i class="material-icons right">done</i>
                     </button>
-                </a>
             </form>
         </fieldset>
-       
         <fieldset class="article">
             <?php 
                 $objet3 = new o_requete();
                 
                 if (!isset($_POST['valeur_tags'])) {
-                            $idTags = NULL;
+                            $idTags[0] = 2; // Tag général
                         } else {
                             $idTags = $_POST['valeur_tags'];
                         }
@@ -65,7 +62,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                 
                 $articles;
 
-                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc);
+                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
 
                 
                 for ($i = 0; $i < sizeof($articles);){
