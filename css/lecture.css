@@ -1,6 +1,6 @@
 /**
 Crée le 23/01/17
-Auteur : Pierre Parrat
+Auteur : Pierre Parrat/Antoine Parant
 Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
@@ -12,14 +12,81 @@ Rôle : css de l'ecriture
 
 }
 
-.infos{
-    
+.user{
+    background-color: #444;
+    float: left;
+    width: 200px;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
 }
 
-#photo_profil{
-    
+.infos_user{
+    text-align: center;
+    background-color: #212121;
+    margin: 5px;
+    margin-top: 15px;
+    padding: 2px;
+    border-radius: 5px;
+    height: 30%;
 }
 
-#contenu_article{
-    
+#wip{
+    margin-top: 10px;
+    width: 100%;
+    height: 90%
+}
+
+.article{
+    color: #000000;
+    background-color: #DEDCDC;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    height: max-content;
+}
+#articulos{
+    color: #DEDCDC;
+    background-color: #212121;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+#titulo{
+    color: #FF6600;
+    padding-left: 5px;
+    margin: 5px;
+}
+
+#contenido{
+    padding: 20px;
+    text-align: justify;
+}
+
+#autor{
+    color: #000000;
+    /*//float: right;*/
+    padding-left: 50px;
+    margin-right: 20px;
+}
+.selection{
+    border: none;
+    background-color: #DEDCDC;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#bouton_selection{
+    float: right;
+}
+
+.select_tags{
+    font-size: 35px;
+    color: #0C0C0C;
+}
+
+#invisible{
+    height: 100%;
+    border: none;
 }

@@ -38,14 +38,12 @@ ul.topnav li button.active {background-color:  #FF6600;}
  ul.topnav li.right {
     float: right;
     margin: 50px 65px 5px auto;
-    background-color: #212121 !important; 
-    border-radius: 50px !important;
 }
 
 .logo{
     width: 120px;
     float: left ;
-    margin: 5px auto 5px 65px;
+    margin: 5px auto 5px 42px;
     background-color: #212121;
     border-radius: 50px;   
 }

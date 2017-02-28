@@ -13,10 +13,11 @@
 <ul class="topnav">
     <a href="../pages/lecture.php"><img class="logo" src="../images/logo.png"></a>
     <li class="right">
-        <a href="../pages/ecriture.php"><button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
-            <i class="material-icons right">email</i>
+        <a href="../pages/ecriture.php">
+            <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Nouveau
+            <i class="material-icons right">mode_edit</i>
         </button></a>
     </li>
-    <p class="titre">Exprimez-vous</p>
+    <p class="titre">Bonne lecture !</p>
 </ul>
 <a href="../pages/ecriture.php"></a>

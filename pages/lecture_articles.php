@@ -1,6 +1,6 @@
 <?php
 /*
-  la page crée le 19/12/2016 par pierre parrat
+  la page crée le 26/02/2017 par Antoine Parant
  * modifié par : Antoine Parant
   Nom de la page : ecriture.php
   But de la page : ecriture des articles
@@ -31,23 +31,23 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
 
         <fieldset class="user">
             <p class="infos_user">
-              <?php include '../includes/i_sidebar_utilisateur.php'; ?>
+             <?php include '../includes/i_sidebar_utilisateur.php'; ?>  
             </p> 
         </fieldset>
         
         <fieldset class="selection">
-            <form method="POST" action="lecture_articles.php">
+            <form method="POST" action="lecture.php">
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
                 
-                <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
+                    <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
                         <i class="material-icons right">done</i>
-                </button>
+                    </button>
             </form>
         </fieldset>
         <fieldset class="article">
-        <?php
-        $objet3 = new o_requete();
+            <?php 
+                $objet3 = new o_requete();
                 
                 if (!isset($_POST['valeur_tags'])) {
                             $idTags[0] = 2; // Tag général
@@ -71,7 +71,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                     echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
                     $i++;
                 }
-        ?>
+            ?>
         </fieldset>
         
     </body>
