@@ -18,9 +18,10 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <?php include '../includes/i_meta.php'; ?>
         <meta name="description" content="Page de lecture  des articles" />
         <link href="../css/lecture.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/materialize.css" rel="stylesheet" type="text/css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="../js/selectionTag.js" type="text/javascript"></script>
+        <script src="../js/oXHR.js" type="text/javascript"></script>
     </head>
     <body class="#212121 grey darken-4">
 
@@ -36,42 +37,12 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         </fieldset>
         
         <fieldset class="selection">
-            <form method="POST" action="lecture_articles.php">
-                <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
-                
-                <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
-                        <i class="material-icons right">done</i>
-                </button>
-            </form>
         </fieldset>
-        <fieldset class="article">
-        <?php
-        $objet3 = new o_requete();
-                
-                if (!isset($_POST['valeur_tags'])) {
-                            $idTags[0] = 2; // Tag général
-                        } else {
-                            $idTags = $_POST['valeur_tags'];
-                        }
-                        
-                        
-                $orderBy = 'id';
-
-                $descAsc = 'desc';
-                
-                $articles;
-
-                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
-
-                
-                for ($i = 0; $i < sizeof($articles);){
-                    echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
-                    echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
-                    echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
-                    $i++;
-                }
-        ?>
+        <fieldset id="ajax_article" class="article">
+            <span id="loader" style="display: none;">
+                <img class="img_loader" src="../images/loader.gif" alt="Chargement" />
+            </span>
         </fieldset>
         
     </body>
