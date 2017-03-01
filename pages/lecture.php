@@ -20,7 +20,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <link href="../css/lecture.css" rel="stylesheet" type="text/css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
-        <script src="../js/selectionTag.js" type="text/javascript"></script>
+        <script src="../js/selection_tags.js" type="text/javascript"></script>
         <script src="../js/oXHR.js" type="text/javascript"></script>
     </head>
     <body class="#212121 grey darken-4">

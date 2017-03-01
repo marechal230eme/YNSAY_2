@@ -12,15 +12,21 @@ else
     $url = $_GET['id'];
     $ids = explode('-', $url);
 }
-
 $articles;
 $retour3 = $objet->recupere_article($articles, "id", "desc", $ids);
 
-for ($i = 0; $i < sizeof($articles); $i++)
+if(sizeof($articles) <= 0)
 {
-    echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
-    echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
-    echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
+    echo 'Désolé, aucun article ne correspond à votre recherche';
+}
+else
+{
+    for ($i = 0; $i < sizeof($articles); $i++)
+    {
+        echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
+        echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
+        echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
+    }
 }
     
         

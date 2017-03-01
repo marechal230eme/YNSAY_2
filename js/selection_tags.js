@@ -13,8 +13,8 @@ function requete(donnees_get)
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0))
         {
-            document.getElementById("ajax_article").innerHTML = xhr.responseText;
             document.getElementById("loader").style.display = "none";
+            document.getElementById("ajax_article").innerHTML = xhr.responseText;
         }
         else if (xhr.readyState < 4)
         {
@@ -38,7 +38,7 @@ function recupereValeur()
         {
             if (listeSelection.options[j].selected)
             {
-                if (j !== 1)
+                if (resultat !== "")
                 {
                     resultat += "-";
                 }
@@ -51,5 +51,6 @@ function recupereValeur()
     {
         resultat = "1"; //tag général
     }
-    requete(resultat);
+    location.href="../ajax/a_selection_tag.php?id="+resultat;
+    //requete(resultat);
 }

@@ -24,8 +24,8 @@ for ($i = 0; $i < sizeof($id_tag); $i += 1)
     {
         $nom = $description_tag[$i];
         echo "<div class=\"input-field #212121 grey darken-4 orange-text col s12\" >";
-        echo "<select multiple name=\"champSelect[]\" onchange=\"recupereValeur();\">";
-        echo"<option value=\"\" disabled selected> $nom </option>";
+        echo "<select multiple name=\"valeur_tags[]\" onchange=\"recupereValeur();\">";
+        echo "<option value=\"\" disabled selected> $nom </option>";
     }
     for ($j = $i; $j < sizeof($id_tag); $j += 1)
     {

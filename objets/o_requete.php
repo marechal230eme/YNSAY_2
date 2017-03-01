@@ -198,7 +198,7 @@ class o_requete
         {
             $requete = $requete . " ASC";
         }
-        
+        echo $requete;
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
