@@ -8,7 +8,7 @@
 session_start();
 if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
 {
-	header('Location: lecture.php');
+	header('Location: accueil.php');
 }
 ?>
 
@@ -39,13 +39,40 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <form method="POST" action="lecture_articles.php">
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 <?php include '../includes/i_selection_tags.php'?>
-                <a href="../pages/lecture.php">
-                    <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
+                
+                <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
                         <i class="material-icons right">done</i>
-                </button></a>
+                </button>
             </form>
         </fieldset>
-        <fieldset id="invisible"></fieldset>
+        <fieldset class="article">
+        <?php
+        $objet3 = new o_requete();
+                
+                if (!isset($_POST['valeur_tags'])) {
+                            $idTags[0] = 2; // Tag général
+                        } else {
+                            $idTags = $_POST['valeur_tags'];
+                        }
+                        
+                        
+                $orderBy = 'id';
+
+                $descAsc = 'desc';
+                
+                $articles;
+
+                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
+
+                
+                for ($i = 0; $i < sizeof($articles);){
+                    echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
+                    echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
+                    echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
+                    $i++;
+                }
+        ?>
+        </fieldset>
         
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
