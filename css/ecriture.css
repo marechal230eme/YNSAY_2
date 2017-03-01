@@ -5,17 +5,48 @@ Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
 
-
-.logo{
-    
-    width: 9%;
+form{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.selection{
+    margin-top: 0px;
+    margin-left: 10px;
+    width: 22%;
+    float: right;
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
 }
 
-.avatar{
-    width: 5%;
+#bouton_selection{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.select_tags,.rappel{
+    color: #FF6600;
+    text-align: center;
+    display: block;
+    font-size: large;
+    font-weight: bolder;
+}
 
+.message{
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
+}
 
 .titre{
     font-size: 40px;
@@ -35,24 +66,9 @@ Rôle : css de l'ecriture
     margin: 10px auto 10px auto;
 }
 
-.ecriture{
-    margin-top: 25px;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-fieldset{
-    border-radius: 10px;
-    background-color: #DEDCDC;
-    color: #212121;
-    font-family: 'Trebuchet MS';
-    margin: auto 80%;
-}
-
 textarea{
     outline-color: #FF6600;
     resize: none;
-    
 }
 
 #contenu_couleur{
@@ -60,17 +76,21 @@ textarea{
     color: #FF6600;
 }
 .div_contenu{
-    background-color: #E7E6E6;
-    margin: 20px 60px 40px 60px;
-    border-radius: 10px;
-}
-
-.select_tags{
-    font-size: 35px;
-    color: #0C0C0C;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-color: #DEDCDC;
+    color: #263238;
+    font-size: medium;
 }
 
 #fond_de_pages 
 { 
     background-color: #0C0C0C !important;    
+}
+
+.erreurArticle{
+    color: #FF3333;
+    font-weight: bolder;
+    margin-left: 40px;
+    margin-top: 8px;
 }

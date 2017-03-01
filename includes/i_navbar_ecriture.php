@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,11 +12,11 @@
 <fieldset class="topnav">
     <a href="../pages/lecture.php"><img class="logo" src="../images/logo.png"></a>
     <li class="right">
-        <a href="../pages/ecriture.php">
-        <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Nouveau
-            <i class="material-icons right">mode_edit</i>
+        <a href="../pages/lecture.php">
+        <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Lire
+            <i class="material-icons right">visibility</i>
         </button>
         </a>
     </li>
-    <p class="titre">Bonne lecture !</p>
+    <p class="titre">Exprimez-vous</p>
 </fieldset>

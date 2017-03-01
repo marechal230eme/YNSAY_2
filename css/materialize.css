@@ -6264,7 +6264,7 @@ form p {
 }
 
 form p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
 /* Remove default checkbox */

@@ -8,8 +8,9 @@ Rôle : css de l'accueil
 
 .logo{
     width: 18%;
-    margin-left: 42%;
-    margin-top: 10px;
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 .img_loader{
@@ -26,10 +27,15 @@ button:hover{
 }
 
 fieldset{
-    border-radius: 10px;
     background-color: #E7E6E6;
     color: #212121;
-    font-family: 'Trebuchet MS';
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
 }
 
 .titre_form{
