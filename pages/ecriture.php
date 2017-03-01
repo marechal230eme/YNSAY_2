@@ -30,7 +30,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <header>
             <!-- metre en place le logo a droite puis metre en place le nuage de tag dans le header  -->
             <!-- <img class="logo" src="../images/logo.png" alt="Logo du site"/> -->
-            <?php include '../includes/i_navbar_tags.php'; ?>
+            <?php include '../includes/i_navbar_ecriture.php'; ?>
         </header>
 
         <fieldset class="ecriture">
@@ -39,7 +39,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <form method="post" action="../pages/verification_article.php">
 
                 <label for="one" class="select_tags"> Sélection des tags </label>
-                    <?php include '../includes/i_selection_tags.php'; ?>
+                    <?php include '../objets/o_requete.php';include '../includes/i_selection_tags.php'; ?>
 
                 <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
                     <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="" maxlength="100" required="">

@@ -31,7 +31,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <header>
             <!-- metre en place le logo a droite puis metre en place le nuage de tag dans le header  -->
             <!-- <img class="logo" src="../images/logo.png" alt="Logo du site"/> -->
-            <?php include '../includes/i_navbar_tags.php'; ?>
+            <?php include '../includes/i_navbar_ecriture.php'; ?>
         </header>
 
         <fieldset class="ecriture">
@@ -40,7 +40,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                 
                 <label for="one" class="select_tags"> Sélection des tags </label>
                 
-                 <?php include '../includes/i_selection_tags.php'; ?>
+                 <?php include '../objets/o_requete.php';include '../includes/i_selection_tags.php'; ?>
                 
                 <div class = "erreurArticle">
                     <?php

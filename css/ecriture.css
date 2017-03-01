@@ -41,12 +41,10 @@ Rôle : css de l'ecriture
     margin-right: 5%;
 }
 
-fieldset{
+.ecriture{
     border-radius: 10px;
     background-color: #DEDCDC;
     color: #212121;
-    font-family: 'Trebuchet MS';
-    margin: auto 80%;
 }
 
 textarea{

@@ -6,9 +6,8 @@
   But de la page : ecriture des articles
  */
 session_start();
-if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
-{
-	header('Location: accueil.php');
+if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+    header('Location: accueil.php');
 }
 ?>
 
@@ -22,6 +21,7 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
     </head>
+
     <body class="#212121 grey darken-4">
 
         <header>
@@ -29,57 +29,62 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             <?php include '../includes/i_navbar_lecture.php'; ?>
         </header>
 
-        <fieldset class="user">
-            <p class="infos_user">
-             <?php include '../includes/i_sidebar_utilisateur.php'; ?>  
-            </p> 
-        </fieldset>
-        
-        <fieldset class="selection">
-            <form method="POST" action="lecture.php">
-                <label for="one" class="select_tags"> Sélection des tags </label>
-                <?php include '../includes/i_selection_tags.php'?>
-                
+        <div class="divasideG">
+            <fieldset class="user">
+                <?php include '../includes/i_sidebar_utilisateur.php'; ?>
+            </fieldset>
+        </div>
+
+        <div class="article">
+            <?php
+            include '../objets/o_requete.php';
+            $objet3 = new o_requete();
+
+            if (!isset($_POST['valeur_tags'])) {
+                $idTags[0] = 2; // Tag général
+            } else {
+                $idTags = $_POST['valeur_tags'];
+            }
+
+
+            $orderBy = 'id';
+
+            $descAsc = 'desc';
+
+            $articles;
+
+            $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
+
+            for ($i = 0; $i < sizeof($articles);) {
+                echo '<fieldset id="articulos">' . '<p id="titulo">' . $articles[$i]['titre'] . '</p>';
+                echo '<fieldset id="contenido">' . $articles[$i]['contenu'] . '</fieldset>';
+                echo '<p id="autor">Article rédigé par ' . $articles[$i]['pseudo'] . '</p></fieldset>';
+                $i++;
+            }
+            ?>
+        </div>
+
+        <div class="divasideD">
+            <fieldset class="selection">
+                <form method="POST" action="lecture.php">
+                    <label for="one" class="select_tags"> Sélection des tags </label>
+                    <?php include '../includes/i_selection_tags.php' ?>
+
                     <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
                         <i class="material-icons right">done</i>
                     </button>
-            </form>
-        </fieldset>
-        <fieldset class="article">
-            <?php 
-                $objet3 = new o_requete();
-                
-                if (!isset($_POST['valeur_tags'])) {
-                            $idTags[0] = 2; // Tag général
-                        } else {
-                            $idTags = $_POST['valeur_tags'];
-                        }
-                        
-                        
-                $orderBy = 'id';
-
-                $descAsc = 'desc';
-                
-                $articles;
-
-                $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
-
-                
-                for ($i = 0; $i < sizeof($articles);){
-                    echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
-                    echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
-                    echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
-                    $i++;
-                }
-            ?>
-        </fieldset>
-        
+                </form>
+            </fieldset>
+        </div>
     </body>
+
     <script src="../js/materialize.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             $('select').material_select();
         });
     </script>
-    <?php include '../includes/i_footer.php'; ?>
+
+    <?php/*include '../includes/i_footer.php'; */?>
+
 </html>
