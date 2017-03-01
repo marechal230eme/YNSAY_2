@@ -10,13 +10,13 @@ if (!isset($_GET['id']) || empty($_GET['id']))
 else
 {
     $url = $_GET['id'];
-    $ids = explode(',', $url);
+    $ids = explode('-', $url);
 }
 
 $articles;
 $retour3 = $objet->recupere_article($articles, "id", "desc", $ids);
 
-for ($i = 0; $i < sizeof($articles);)
+for ($i = 0; $i < sizeof($articles); $i++)
 {
     echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
     echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';

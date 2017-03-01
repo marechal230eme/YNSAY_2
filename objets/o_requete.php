@@ -169,11 +169,10 @@ class o_requete
                 $requete = $requete . $ids[$i];
                 if ($i < sizeof($ids) - 1)
                 {
-                    $requete = $requete . " OR ";
+                    $requete = $requete . " AND ";
                 }
             }
         }
-        
         
         if ($orderBy === 'id')
         {
@@ -261,7 +260,7 @@ class o_requete
         if($idTags == NULL) {
             $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
             $stmt->bindValue(':id_article', $idArticle);
-            $stmt->bindValue(':id_tag', "2");
+            $stmt->bindValue(':id_tag', "1");
             $stmt->execute();
 	}
 	else {

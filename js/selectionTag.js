@@ -30,16 +30,26 @@ function recupereValeur()
 {
     var resultat = ""; 
     var selectTag = document.getElementsByTagName("select");
+    var aUnTag = false;
     for (var i = 0; i< selectTag.length; i++)
     {
         var listeSelection = selectTag[i];
-        for (var j = 0; j < listeSelection.length; j += 1)
+        for (var j = 1; j < listeSelection.length; j += 1)
         {
             if (listeSelection.options[j].selected)
             {
-                resultat += "," + listeSelection.options[j].value;
+                if (j !== 1)
+                {
+                    resultat += "-";
+                }
+                resultat += listeSelection.options[j].value;  
+                aUnTag = true;
             }
         }
-    } 
+    }
+    if (!aUnTag)
+    {
+        resultat = "1"; //tag général
+    }
     requete(resultat);
 }
