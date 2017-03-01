@@ -70,7 +70,7 @@ for($index=1 ; $index<sizeof($description) ; $index++)                          
             
             foreach ($case_description[2] as $ligne)                            //** pour chaque ligne du tableau 
             {                                       
-               
+             
                 // strnatcmp :  la fonction retourne < 0 si str1 est inférieure à str2; 
                 // > 0 si str1 est supérieure à str2, et 0 si les deux chaînes sont égales.  
                 if (((strnatcmp(($ligne), $description[$index])) == 0))      //* on regarde pour chaque tag , la description_tag associé , pour voire si elle correspond au description_tag de la selection 
