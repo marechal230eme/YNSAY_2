@@ -10,32 +10,44 @@ and open the template in the editor.
 
 body {margin: 2px;}
 
-ul.topnav {
+fieldset{
+    margin-top: 2px;
+}
+
+fieldset.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #444;
-    border-radius: 10px;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-/* ul.topnav li {float: left;}  */
+/* fieldset.topnav li {float: left;}  */
 
-ul.topnav button {
+fieldset.topnav button {
     display: block;
     color: white;
     text-align: center;
 }
 
-ul.topnav li button:hover:not(.active) {background-color: #111;}
+fieldset.topnav li button:hover:not(.active) {background-color: #111;}
 
-ul.topnav li button:hover{
+fieldset.topnav li button:hover{
     color: #212121;
 }
 
-ul.topnav li button.active {background-color:  #FF6600;}
+fieldset.topnav li button.active {background-color:  #FF6600;}
 
- ul.topnav li.right {
+ fieldset.topnav li.right {
     float: right;
     margin: 50px 65px 5px auto;
 }

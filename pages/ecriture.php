@@ -6,9 +6,8 @@
   But de la page : ecriture des articles pour le site
  */
 session_start();
-if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
-{
-	header('Location: accueil.php');
+if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers la page d'accueil si l'utilisateur n'est pas connecté
+    header('Location: accueil.php');
 }
 ?>
 
@@ -30,17 +29,21 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
         <header>
             <!-- metre en place le logo a droite puis metre en place le nuage de tag dans le header  -->
             <!-- <img class="logo" src="../images/logo.png" alt="Logo du site"/> -->
-            <?php include '../includes/i_navbar_tags.php'; ?>
+            <?php include '../includes/i_navbar_ecriture.php'; ?>
         </header>
 
-        <fieldset class="ecriture">
-            
-            <!--<p class="titre">Exprimez-vous</p>-->
-            <form method="post" action="../pages/verification_article.php">
+        <form method="post" action="../pages/verification_article.php">
 
+            <fieldset class="selection">
                 <label for="one" class="select_tags"> Sélection des tags </label>
-                    <?php include '../includes/i_selection_tags.php'; ?>
+                <?php include '../objets/o_requete.php';
+                include '../includes/i_selection_tags.php'; ?>
+                <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
+                    <i class="material-icons right">email</i>
+                </button>
+            </fieldset>
 
+            <fieldset class="message">
                 <p class="div_contenu">Titre de votre article <span id="contenu_couleur"> : </span>
                     <input  type="text" id="title"  name="titre" placeholder="Votre titre..." autofocus="" maxlength="100" required="">
                 </p>
@@ -48,11 +51,10 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
                     <textarea id="corps" name="corps" rows="20" cols="5" placeholder="Votre article ..." maxlength="500"></textarea>
                 </p>
                 
-                <button class="btn waves-effect waves-light btn-large orange accent-4 " type="submit" name="valider">Envoyer
-                    <i class="material-icons right">email</i>
-                </button>                
-            </form>
-        </fieldset> 
+                <p class="rappel">N'oubliez pas de séléctionner vos tags !</p>
+            </fieldset>
+
+        </form>
 
     </body>
     <script src="../js/materialize.js" type="text/javascript"></script>
@@ -61,5 +63,5 @@ if(!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") //renvoie vers la p
             $('select').material_select();
         });
     </script>
-    <?php include '../includes/i_footer.php'; ?>
+    <?php /*include '../includes/i_footer.php';*/ ?>
 </html>

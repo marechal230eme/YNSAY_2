@@ -5,88 +5,102 @@ Nom du css : ecriture
 Rôle : css de l'ecriture  
 */
 
-
-.logo{
-
-    width: 15%;
-
+.divasideG{
+   float: left;
 }
 
-.user{
-    background-color: #444;
-    float: left;
-    width: 200px;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.infos_user{
-    text-align: center;
-    background-color: #212121;
-    margin: 5px;
-    margin-top: 15px;
-    padding: 2px;
-    border-radius: 5px;
-    height: 30%;
-}
-
-#wip{
-    margin-top: 10px;
-    width: 100%;
-    height: 90%
+.divasideD{
+    width: auto;
+    display: block;
 }
 
 .article{
-    color: #000000;
-    background-color: #DEDCDC;
-    margin: 10px;
-    border: none;
-    border-radius: 10px;
-    height: max-content;
+    float: left;
+    width: 65%;
 }
+
+.user{
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.selection{
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
+    margin: 10px;
+}
+
+.avatar{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.message{
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+
 #articulos{
-    color: #DEDCDC;
-    background-color: #212121;
-    border-radius: 10px;
-    margin: 25px;
+    float: none;
+    margin: 10px;
+    background-color: whitesmoke;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-left-width: 3px;
+    border-left-color: black;
+    border-top: none;
+    border-right: none;
+    height: max-content;
 }
 
 #titulo{
     color: #FF6600;
-    padding-left: 5px;
-    margin: 5px;
+    padding-left: 40px;
+    font-size: large;
+    font-weight: bolder;
 }
 
 #contenido{
-    padding: 20px;
-    text-align: justify;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-color: #DEDCDC;
+    color: #263238;
+    font-size: medium;
 }
 
 #autor{
-    color: #000000;
-    /*//float: right;*/
-    padding-left: 50px;
-    margin-right: 20px;
-}
-.selection{
-    border: none;
-    background-color: #DEDCDC;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-#bouton_selection{
+    color: #263238;
     float: right;
+    margin-right: 25px;
+    margin-top: 15px;
 }
 
 .select_tags{
-    font-size: 35px;
-    color: #0C0C0C;
+    margin-top: 5px;
+    color: #FF6600;
+    text-align: center;
+    display: block;
+    font-size: large;
+    font-weight: bolder;
 }
 
-#invisible{
-    height: 100%;
-    border: none;
+#bouton_selection{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
