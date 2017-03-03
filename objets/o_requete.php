@@ -156,25 +156,25 @@ class o_requete
      */
     public function recupere_article(&$articles, $orderBy, $descAsc, $ids)
     {
+        $taille = sizeof($ids);
         $requete = "SELECT DISTINCT article.id_article, titre, contenu, pseudo FROM article "
                 . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur"
                 . " INNER JOIN a_pour_tag ON article.id_article = a_pour_tag.id_article";
         
         if ($ids[0] !== 2)
         {
-            $requete = $requete . " WHERE a_pour_tag.id_tag = ";
+            $requete = $requete . " WHERE a_pour_tag.id_tag IN (";
         
-            for ($i = 0; $i < sizeof($ids); $i++)
+            for ($i = 0; $i < $taille; $i++)
             {
                 $requete = $requete . $ids[$i];
-                if ($i < sizeof($ids) - 1)
+                if ($i < $taille - 1)
                 {
-                    $requete = $requete . " OR ";
+                    $requete = $requete . ",";
                 }
             }
         }
-        
-        
+        $requete = $requete . ") GROUP BY a_pour_tag.id_article HAVING count(*) >= $taille";
         if ($orderBy === 'id')
         {
             $requete = $requete . " ORDER BY id_article";
@@ -199,7 +199,6 @@ class o_requete
         {
             $requete = $requete . " ASC";
         }
-        
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
@@ -261,7 +260,7 @@ class o_requete
         if($idTags == NULL) {
             $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
             $stmt->bindValue(':id_article', $idArticle);
-            $stmt->bindValue(':id_tag', "2");
+            $stmt->bindValue(':id_tag', "1");
             $stmt->execute();
 	}
 	else {

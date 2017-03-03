@@ -75,7 +75,7 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers l
 
                         if ($retour === "ok") {
                             echo "  Votre message a bien été engeristré !";
-                            header("refresh: 4 ; url = lecture.php");
+                            header("refresh: 3 ; url = lecture.php");
                         }
                     }
                     ?>
