@@ -51,6 +51,5 @@ function recupereValeur()
     {
         resultat = "1"; //tag général
     }
-    location.href="../ajax/a_selection_tag.php?id="+resultat;
-    //requete(resultat);
+    requete(resultat);
 }

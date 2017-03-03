@@ -156,24 +156,25 @@ class o_requete
      */
     public function recupere_article(&$articles, $orderBy, $descAsc, $ids)
     {
+        $taille = sizeof($ids);
         $requete = "SELECT DISTINCT article.id_article, titre, contenu, pseudo FROM article "
                 . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur"
                 . " INNER JOIN a_pour_tag ON article.id_article = a_pour_tag.id_article";
         
         if ($ids[0] !== 2)
         {
-            $requete = $requete . " WHERE a_pour_tag.id_tag = ";
+            $requete = $requete . " WHERE a_pour_tag.id_tag IN (";
         
-            for ($i = 0; $i < sizeof($ids); $i++)
+            for ($i = 0; $i < $taille; $i++)
             {
                 $requete = $requete . $ids[$i];
-                if ($i < sizeof($ids) - 1)
+                if ($i < $taille - 1)
                 {
-                    $requete = $requete . " AND ";
+                    $requete = $requete . ",";
                 }
             }
         }
-        
+        $requete = $requete . ") GROUP BY a_pour_tag.id_article HAVING count(*) >= $taille";
         if ($orderBy === 'id')
         {
             $requete = $requete . " ORDER BY id_article";
@@ -198,7 +199,6 @@ class o_requete
         {
             $requete = $requete . " ASC";
         }
-        echo $requete;
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
