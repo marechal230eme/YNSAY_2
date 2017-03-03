@@ -39,7 +39,9 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers l
             </fieldset>
         </div>
 
-        <div id="ajax_article" class="article">
+        <div class="article">
+            <div id="ajax_article">
+            </div>
             <span id="loader" style="display: none;">
                 <img class="img_loader" src="../images/loader.gif" alt="Chargement" />
             </span>
