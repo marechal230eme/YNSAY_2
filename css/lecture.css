@@ -17,6 +17,7 @@ Rôle : css de l'ecriture
 .article{
     float: left;
     width: 65%;
+    word-wrap: break-word;
 }
 
 .user{
@@ -75,6 +76,7 @@ Rôle : css de l'ecriture
 }
 
 #contenido{
+    max-width: 95%;
     margin-left: 40px;
     margin-right: 40px;
     border-color: #DEDCDC;
@@ -84,7 +86,8 @@ Rôle : css de l'ecriture
 
 #autor{
     color: #263238;
-    float: right;
+    float: none;
+    margin-left: 40px;
     margin-right: 25px;
     margin-top: 15px;
 }
