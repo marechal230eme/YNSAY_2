@@ -24,8 +24,8 @@ else
     for ($i = 0; $i < sizeof($articles); $i++)
     {
         echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
-        echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>';
-        echo '<p id="autor">'.$articles[$i]['pseudo'].'</p>'.'</div>';
+        echo '<p id="autor">'.$articles[$i]['pseudo'].' a posté : </p>';
+        echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>'.'</div>';
     }
 }
     

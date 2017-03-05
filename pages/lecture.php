@@ -25,7 +25,8 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers l
         <script src="../js/selection_tags.js" type="text/javascript"></script>
         <script src="../js/oXHR.js" type="text/javascript"></script>
     </head>
-
+    <!-- Affiche tous les articles au chargement de la page -->
+    <script>requete(1);</script> 
     <body class="#212121 grey darken-4">
 
         <header>

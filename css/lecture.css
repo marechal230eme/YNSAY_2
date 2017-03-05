@@ -86,7 +86,8 @@ Rôle : css de l'ecriture
 
 #autor{
     color: #263238;
-    float: right;
+    float: none;
+    margin-left: 40px;
     margin-right: 25px;
     margin-top: 15px;
 }
