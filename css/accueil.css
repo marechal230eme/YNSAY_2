@@ -47,3 +47,16 @@ fieldset{
     color: #FF3333;
     font-weight: bolder;
 }
+
+.presentation{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 35px;
+}
+.textpresentation{
+    color: #FF6600;
+    text-align: center;
+    display: block;
+    font-size: large;
+    font-weight: bolder;
+}
