@@ -17,15 +17,15 @@ $retour3 = $objet->recupere_article($articles, "id", "desc", $ids);
 
 if(sizeof($articles) <= 0)
 {
-    echo 'Désolé, aucun article ne correspond à votre recherche';
+    echo '<p class="aucunA">Désolé, aucun article ne correspond à votre recherche</p>';
 }
 else
 {
     for ($i = 0; $i < sizeof($articles); $i++)
     {
         echo '<div id="articulos">'.'<p id="titulo">'.$articles[$i]['titre'].'</p>';
-        echo '<p id="autor">'.$articles[$i]['pseudo'].' a posté : </p>';
-        echo '<p id="contenido">'.$articles[$i]['contenu'].'</p>'.'</div>';
+        echo '<div id="indication"><span id="autor">'.$articles[$i]['pseudo'].'</span><span id="poste"> a posté : </span></div>';
+        echo '<fieldset id="contenido">'.$articles[$i]['contenu'].'</fieldset>'.'</div>';
     }
 }
     
