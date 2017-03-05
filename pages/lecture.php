@@ -18,10 +18,15 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers l
         <meta name="description" content="Page de lecture  des articles" >
         <link href="../css/lecture.css" rel="stylesheet" type="text/css">
         <link href="../css/materialize.css" rel="stylesheet" type="text/css">
+        
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
+        
+        <script src="../js/selection_tags.js" type="text/javascript"></script>
+        <script src="../js/oXHR.js" type="text/javascript"></script>
     </head>
-
+    <!-- Affiche tous les articles au chargement de la page -->
+    <script>requete(1);</script> 
     <body class="#212121 grey darken-4">
 
         <header>
@@ -36,46 +41,17 @@ if (!isset($_SESSION['pseudo']) || $_SESSION['pseudo'] == "") { //renvoie vers l
         </div>
 
         <div class="article">
-            <?php
-            include '../objets/o_requete.php';
-            $objet3 = new o_requete();
-
-            if (!isset($_POST['valeur_tags'])) {
-                $idTags[0] = 2; // Tag général
-            } else {
-                $idTags = $_POST['valeur_tags'];
-            }
-
-
-            $orderBy = 'id';
-
-            $descAsc = 'desc';
-
-            $articles;
-
-            $retour3 = $objet3->recupere_article($articles, $orderBy, $descAsc, $idTags);
-
-            for ($i = 0; $i < sizeof($articles);) {
-                echo '<fieldset id="articulos">'
-                . '<p id="titulo">' . $articles[$i]['titre'] . '</p>'
-                . '<fieldset id="contenido">' . $articles[$i]['contenu'] . '</fieldset>'
-                . '<p id="autor">Article rédigé par ' . $articles[$i]['pseudo'] . '</p>'
-                . '</fieldset>';
-                $i++;
-            }
-            ?>
+            <div id="ajax_article">
+            </div>
+            <span id="loader" style="display: none;">
+                <img class="img_loader" src="../images/loader.gif" alt="Chargement" />
+            </span>
         </div>
 
         <div class="divasideD">
             <fieldset class="selection">
-                <form method="POST" action="lecture_articles.php">
                     <label for="one" class="select_tags"> Sélection des tags </label>
                     <?php include '../includes/i_selection_tags.php' ?>
-
-                    <button id="bouton_selection" class="btn waves-effect waves-light btn-large orange accent-4" type="submit" name="valider">Valider
-                        <i class="material-icons right">done</i>
-                    </button>
-                </form>
             </fieldset>
         </div>
     </body>

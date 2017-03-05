@@ -108,7 +108,8 @@ class o_requete
     
     public function recupere_tag(&$id_tag, &$nom_tag, &$description_tag)
     {
-        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag ORDER BY id_tag";
+        //On exclut le tag général
+        $requete = "SELECT id_tag, nom_tag, description_tag FROM tag WHERE id_tag <> 1 ORDER BY id_tag";
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
@@ -156,25 +157,25 @@ class o_requete
      */
     public function recupere_article(&$articles, $orderBy, $descAsc, $ids)
     {
+        $taille = sizeof($ids);
         $requete = "SELECT DISTINCT article.id_article, titre, contenu, pseudo FROM article "
                 . "INNER JOIN utilisateur ON article.id_utilisateur = utilisateur.id_utilisateur"
                 . " INNER JOIN a_pour_tag ON article.id_article = a_pour_tag.id_article";
         
         if ($ids[0] !== 2)
         {
-            $requete = $requete . " WHERE a_pour_tag.id_tag = ";
+            $requete = $requete . " WHERE a_pour_tag.id_tag IN (";
         
-            for ($i = 0; $i < sizeof($ids); $i++)
+            for ($i = 0; $i < $taille; $i++)
             {
                 $requete = $requete . $ids[$i];
-                if ($i < sizeof($ids) - 1)
+                if ($i < $taille - 1)
                 {
-                    $requete = $requete . " OR ";
+                    $requete = $requete . ",";
                 }
             }
         }
-        
-        
+        $requete = $requete . ") GROUP BY a_pour_tag.id_article HAVING count(*) >= $taille";
         if ($orderBy === 'id')
         {
             $requete = $requete . " ORDER BY id_article";
@@ -199,7 +200,7 @@ class o_requete
         {
             $requete = $requete . " ASC";
         }
-        
+        $requete = $requete . " LIMIT 100";
         $resultat = $this->exe_requete($requete);
         
         if($resultat === self::ERR_CONNECTION || $resultat === self::ERR_NOTFOUND)
@@ -258,21 +259,14 @@ class o_requete
             return self::ERR_CONNECTION;
         }
         $idArticle = $this->DBH->lastInsertId();
-        if($idTags == NULL) {
+        $nbTags = count($idTags);
+        $idTags[$nbTags] = 1; //tag général
+        for($i=0; $i < $nbTags + 1; $i++) {
             $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
             $stmt->bindValue(':id_article', $idArticle);
-            $stmt->bindValue(':id_tag', "2");
-            $stmt->execute();
-	}
-	else {
-            $nbTags = count($idTags);
-            for($i=0; $i < $nbTags; $i++) {
-                $stmt = $this->DBH->prepare("INSERT INTO a_pour_tag (id_article, id_tag) VALUES (:id_article, :id_tag)");
-		$stmt->bindValue(':id_article', $idArticle);
-		$stmt->bindValue(':id_tag', $idTags[$i]);
-		$stmt->execute(); 
-            }
-	}
+            $stmt->bindValue(':id_tag', $idTags[$i]);
+            $stmt->execute(); 
+        }
         return self::OK;
     }
     
