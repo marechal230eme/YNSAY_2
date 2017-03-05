@@ -27,7 +27,17 @@ if(isset($_SESSION['pseudo']))
     </head>
     
     <body class="#212121 grey darken-4">
-        <img class="logo" src="../images/logo.png" alt="Logo du site"/>      
+        <img class="logo" src="../images/logo.png" alt="Logo du site"/>
+        
+        <div class="presentation">
+            <p class="textpresentation">
+                Ynsay est un site qui est proposé aux étudiants de l'Isen Toulon.
+                Il permet à tout le monde de discuter librement d'un tas de chose.
+                Vous pouvez vous exprimer et choisir, grâce à des filtres, à qui votre message est destiné.
+                Il peut s'agir d'une classe mais aussi d'un thême en rapport avec votre message.
+                Alors n'attendez plus et inscrivez-vous !
+            </p>
+        </div>
 
         <fieldset id="formC" style="display: inherit;">
                 <form>
